@@ -1,0 +1,284 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_au5egc\working
+    udp = 10201
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R9]]
+        model = 3725
+        console = 2118
+        aux = 2518
+        cnfg = configs\R9.cfg
+        f0/0 = R2 f2/0
+        x = 773.288455329
+        y = 12.9461761309
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_au5egc\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2113
+        aux = 2513
+        cnfg = configs\R4.cfg
+        f0/0 = SW1 2
+        x = -814.873375215
+        y = -505.661038331
+        z = 1.0
+        hx = 9.01471862577
+        hy = -26.4142135624
+    [[ROUTER R1]]
+        model = 3725
+        console = 2110
+        aux = 2510
+        cnfg = configs\R1.cfg
+        f0/0 = SW1 3
+        f0/1 = R6 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R3 f0/0
+        x = -354.026478658
+        y = -125.237590053
+        z = 1.0
+        hx = 24.5710678119
+        hy = -36.313708499
+    [[ROUTER R2]]
+        model = 3725
+        console = 2111
+        aux = 2511
+        cnfg = configs\R2.cfg
+        f0/0 = R3 f0/1
+        f0/1 = R7 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R8 f0/0
+        slot2 = NM-1FE-TX
+        f2/0 = R9 f0/0
+        x = 383.783837971
+        y = -193.119841047
+        z = 1.0
+        hx = -0.884776310838
+        hy = -29.2426406871
+    [[ROUTER R3]]
+        model = 3725
+        console = 2112
+        aux = 2512
+        cnfg = configs\R3.cfg
+        f0/0 = R1 f1/0
+        f0/1 = R2 f0/0
+        x = 22.750216638
+        y = -166.249783362
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_au5egc\working
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2114
+        aux = 2514
+        cnfg = configs\R5.cfg
+        f0/0 = SW1 1
+        x = -825.18203308
+        y = -285.043722601
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2115
+        aux = 2515
+        cnfg = configs\R6.cfg
+        f0/0 = R1 f0/1
+        x = -667.981889505
+        y = 36.9878066912
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2116
+        aux = 2516
+        cnfg = configs\R7.cfg
+        f0/0 = R2 f0/1
+        x = 774.106781186
+        y = -450.915872327
+        z = 1.0
+        hx = 14.6715728753
+        hy = -29.2426406871
+    [[ROUTER R8]]
+        model = 3725
+        console = 2117
+        aux = 2517
+        cnfg = configs\R8.cfg
+        f0/0 = R2 f1/0
+        x = 770.869191133
+        y = -217.570634536
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R5 f0/0
+        2 = access 1 R4 f0/0
+        3 = access 1 R1 f0/0
+        x = -540.374241767
+        y = -293.185858225
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "Objective on edge of b2 (R2):\n\n- No traffic should be allowed from outside to come in."
+        x = -1254.40742982
+        y = 430.977272147
+    [[NOTE 2]]
+        text = "IN:\n- No traffic should be allowed to come in, except the following - there is a telnet server located at 150.51.0.0/10 only allow traffic from outside towards this server on daily basis from 10 am till 8pm and this should remain so for this entire year.\n"
+        x = -1261.47849764
+        y = 324.911254969
+    [[NOTE 3]]
+        text = "Objective on edge of B.1 (R1):\n\nOUT:\n- Allow 150.50.0.0/16 & 172.22.0.0/16 to access 200.1.8.0/24 & 200.152.199.0/24 on weekdays from 9 am till 9 pm, and this should remain so for the last 6 months of the year (2024) and allow the reply also.\n\n- Allow 190.1.0.0/10 to access 197.1.7.0/24 for telnet on weekdays from 8 am till 5 pm and also allow the same for ping on weekends from 7 am till 6pm, this should remain so for the entire year and allow the reply.\n\n"
+        x = -1262.8927112
+        y = 118.436074863
+    [[NOTE 4]]
+        text = "\n200.1.8.0/24\n200.1.8.0/24\n\n"
+        x = 854.184991673
+        y = -237.945742855
+    [[NOTE 5]]
+        text = "\n197.1.7.0/24\n197.1.17.0/24\n"
+        x = 872.569767984
+        y = -469.876767084
+    [[NOTE 6]]
+        text = "\n200.152.99.0/24\n200.152.199.0/24"
+        x = 847.113923861
+        y = 5.29898987321
+    [[NOTE 7]]
+        text = "\n190.1.0.0/16\n190.2.0.0/16\n"
+        x = -960.251008851
+        y = -8.84314575051
+    [[NOTE 8]]
+        text = "\n172.21.0.0/16\n172.22.0.0/16\n"
+        x = -977.221571599
+        y = -327.041197284
+    [[NOTE 9]]
+        text = "150.50.0.0/16\n150.51.0.0/16\n"
+        x = -965.9078631
+        y = -540.587445202
+    [[NOTE 10]]
+        text = "Building 2 (B2)"
+        x = 485.075251894
+        y = -597.155987697
+    [[NOTE 11]]
+        text = "building 1 (B1)"
+        x = -519.016377391
+        y = -583.013852074
+    [[NOTE 12]]
+        text = "3"
+        x = 71.6267886274
+        y = 22.2779785668
+        interface = SW1 3
+    [[NOTE 13]]
+        text = "2"
+        x = -23.3078171054
+        y = -18.5182540484
+        interface = SW1 2
+    [[NOTE 14]]
+        text = "1"
+        x = -8.69924704644
+        y = 33.4190376318
+        interface = SW1 1
+    [[NOTE 15]]
+        text = "f0/0"
+        x = -43.4260641963
+        y = -5.89542550496
+        interface = R9 f0/0
+    [[NOTE 16]]
+        text = "f0/0"
+        x = -43.766556054
+        y = 30.9748898241
+        interface = R8 f0/0
+    [[NOTE 17]]
+        text = "f0/0"
+        x = 4.36244174661
+        y = 49.9265153086
+        interface = R7 f0/0
+    [[NOTE 18]]
+        text = "f0/0"
+        x = 67.7227975735
+        y = 24.7298602195
+        interface = R6 f0/0
+    [[NOTE 19]]
+        text = "f0/0"
+        x = 72.9566063593
+        y = 20.1373115543
+        interface = R5 f0/0
+    [[NOTE 20]]
+        text = "f0/0"
+        x = 83.3225357312
+        y = 36.7192641752
+        interface = R4 f0/0
+    [[NOTE 21]]
+        text = "f0/1"
+        x = 72.9997642905
+        y = 21.8626802931
+        interface = R3 f0/1
+    [[NOTE 22]]
+        text = "f0/0"
+        x = -56.4902710644
+        y = 25.5875302771
+        interface = R3 f0/0
+    [[NOTE 23]]
+        text = "f2/0"
+        x = 64.1712302004
+        y = 54.1380661921
+        interface = R2 f2/0
+    [[NOTE 24]]
+        text = "f1/0"
+        x = 89.9675661808
+        y = -16.6733746339
+        interface = R2 f1/0
+    [[NOTE 25]]
+        text = "f0/1"
+        x = 44.6669955049
+        y = -49.7671357422
+        interface = R2 f0/1
+    [[NOTE 26]]
+        text = "f0/0"
+        x = -46.597744037
+        y = 47.5931638296
+        interface = R2 f0/0
+    [[NOTE 27]]
+        text = "f1/0"
+        x = 54.6080200706
+        y = -15.528655774
+        interface = R1 f1/0
+    [[NOTE 28]]
+        text = "f0/1"
+        x = 1.10562955121
+        y = 46.1401974655
+        interface = R1 f0/1
+    [[NOTE 29]]
+        text = "f0/0"
+        x = -66.7663989342
+        y = -13.9764633766
+        interface = R1 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = 326.683332908
+        y = -534.572726577
+        width = 517.602163828
+        height = 692.964645562
+    [[SHAPE 2]]
+        type = rectangle
+        x = -828.72914755
+        y = -545.886435076
+        width = 578.41334701
+        height = 649.124025129

@@ -1,0 +1,315 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_syddx2\working
+    udp = 10201
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R11]]
+        model = 3725
+        console = 2113
+        aux = 2513
+        cnfg = R11.cfg
+        wic0/0 = WIC-2T
+        f0/0 = R12 f1/1
+        x = -486.556349186
+        y = -463.518902708
+        z = 1.0
+    [[ROUTER R14]]
+        model = 3725
+        console = 2120
+        aux = 2520
+        cnfg = R14.cfg
+        f0/0 = R12 f2/0
+        x = 109.124891681
+        y = -461.820417898
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_syddx2\working
+    udp = 10301
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        console = 2118
+        aux = 2518
+        cnfg = R12.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R4 f1/0
+        f1/1 = R11 f0/0
+        slot2 = PA-2FE-TX
+        f2/0 = R14 f0/0
+        f2/1 = R13 f0/0
+        x = -173.007142675
+        y = -239.788888605
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_syddx2\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        f0/0 = R1 f0/0
+        f0/1 = R5 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R12 f1/0
+        x = -176.656854249
+        y = 53.4873734153
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        f0/0 = R4 f0/0
+        f0/1 = R3 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R2 f0/0
+        x = -660.504617358
+        y = 54.9015869777
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        f0/0 = R1 f1/0
+        x = -902.744299452
+        y = -121.875108319
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        f0/0 = R1 f0/1
+        x = -908.81031663
+        y = 187.837661841
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = c:\users\emad\appdata\local\temp\GNS3_syddx2\working
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        cnfg = R5.cfg
+        f0/0 = R4 f0/1
+        f0/1 = R6 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R7 f0/0
+        x = 275.482322781
+        y = 70.4579361638
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        cnfg = R6.cfg
+        f0/0 = R5 f0/1
+        x = 537.334269972
+        y = -99.6568542495
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        cnfg = R7.cfg
+        f0/0 = R5 f1/0
+        x = 525.611398545
+        y = 253.896536344
+        z = 1.0
+    [[ROUTER R13]]
+        model = 3725
+        console = 2119
+        aux = 2519
+        cnfg = R13.cfg
+        f0/0 = R12 f2/1
+        x = -165.225396744
+        y = -483.033621334
+        z = 1.0
+[GNS3-DATA]
+    configs = .
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "\nObjectives on edge of site A:\n\nAllow 158.72.16.0/20 to access S1 for telnet on daily basis from 10 am till 3pm also allow the same to access tS2 for SSH on weekdays from 6 am till 6pm, and this should remain so for this entire year.\n\nAlso, allow 195.89.72.64/26 and 158.72.32.0/20 to access S3 for ICMP and telnet on monday.\nfriday (9-11) and sunday (5-8 for the last 5 months of this year.\n\nThere is a telnet server located at 195.89.72.32/26, this server will go down for maintaince purpose on coming weekend. kindly denytraffic jam from outside towards this server for the said time.\n\nObjective on the edge of Site A:\n\n- Block any traffic from outside to come in.\n- Allow 193.102.151.32/20 to access S2 for ICMP on weekends from 9 am till 4 pm for this entire year.\n\nobjective on the edge of data centre:\n\nBlock any traffic from outside to come in."
+        x = -1173.79725677
+        y = 388.550865276
+    [[NOTE 2]]
+        text = "SIte B"
+        x = 849.942350986
+        y = 67.5243866176
+    [[NOTE 3]]
+        text = "Site A"
+        x = -1129.95663634
+        y = 22.2695526217
+    [[NOTE 4]]
+        text = "193.102.151.32/28\n193.102.151.64/28"
+        x = 636.396103068
+        y = 238.644227665
+    [[NOTE 5]]
+        text = "Data Centre"
+        x = 141.421356237
+        y = -598.57020126
+    [[NOTE 6]]
+        text = "Server 1"
+        x = 188.090403796
+        y = -407.65137034
+    [[NOTE 7]]
+        text = "Server 2"
+        x = -77.7817459305
+        y = -475.533621334
+    [[NOTE 8]]
+        text = "Server 3"
+        x = -401.636651714
+        y = -471.290980647
+    [[NOTE 9]]
+        text = "158.72.16.0/20\n158.72.32.0/20"
+        x = -1073.38809384
+        y = 170.761976671
+    [[NOTE 10]]
+        text = "195.89.72.32/26\n195.89.72.64/26"
+        x = -1062.07438534
+        y = -182.791413922
+    [[NOTE 11]]
+        text = "194.82.15.8/29\n194.82.15.16/29"
+        x = 643.46717088
+        y = -117.737590053
+    [[NOTE 12]]
+        text = "f0/0"
+        x = 1.56656411517
+        y = 46.7374030261
+        interface = R14 f0/0
+    [[NOTE 13]]
+        text = "f0/0"
+        x = 31.7059658464
+        y = 61.9790629656
+        interface = R13 f0/0
+    [[NOTE 14]]
+        text = "f2/1"
+        x = -25.102935466
+        y = -49.0917613378
+        interface = R12 f2/1
+    [[NOTE 15]]
+        text = "f2/0"
+        x = 64.4334358848
+        y = -2.73740302607
+        interface = R12 f2/0
+    [[NOTE 16]]
+        text = "f1/1"
+        x = -61.9250908744
+        y = 3.20506260686
+        interface = R12 f1/1
+    [[NOTE 17]]
+        text = "f1/0"
+        x = 30.5382366142
+        y = 61.9241746443
+        interface = R12 f1/0
+    [[NOTE 18]]
+        text = "f0/0"
+        x = 23.2732872588
+        y = 62.0081408287
+        interface = R11 f0/0
+    [[NOTE 19]]
+        text = "f0/0"
+        x = -58.6525168881
+        y = 2.58720430529
+        interface = R7 f0/0
+    [[NOTE 20]]
+        text = "f0/0"
+        x = -0.542951753014
+        y = 43.7915210046
+        interface = R6 f0/0
+    [[NOTE 21]]
+        text = "f1/0"
+        x = 65.2555472684
+        y = 45.6554363818
+        interface = R5 f1/0
+    [[NOTE 22]]
+        text = "f0/1"
+        x = 66.542951753
+        y = 0.208478995375
+        interface = R5 f0/1
+    [[NOTE 23]]
+        text = "f0/0"
+        x = -66.368823429
+        y = 27.5707668256
+        interface = R5 f0/0
+    [[NOTE 24]]
+        text = "f1/0"
+        x = 43.94704476
+        y = -20.7526017691
+        interface = R4 f1/0
+    [[NOTE 25]]
+        text = "f0/1"
+        x = 72.9718538093
+        y = 23.5003009863
+        interface = R4 f0/1
+    [[NOTE 26]]
+        text = "f0/0"
+        x = -57.9115173857
+        y = 29.1879812404
+        interface = R4 f0/0
+    [[NOTE 27]]
+        text = "f0/0"
+        x = 68.2642126983
+        y = 3.12050575969
+        interface = R3 f0/0
+    [[NOTE 28]]
+        text = "f0/0"
+        x = 42.683763767
+        y = 72.4494469387
+        interface = R2 f0/0
+    [[NOTE 29]]
+        text = "f1/0"
+        x = -57.2939368223
+        y = -7.23624350308
+        interface = R1 f1/0
+    [[NOTE 30]]
+        text = "f0/1"
+        x = -2.26421269829
+        y = 40.8794942403
+        interface = R1 f0/1
+    [[NOTE 31]]
+        text = "f0/0"
+        x = 72.9998291403
+        y = 21.8830865715
+        interface = R1 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -1196.42467377
+        y = -188.090403796
+        width = 657.609306503
+        height = 442.648845023
+    [[SHAPE 2]]
+        type = rectangle
+        x = 270.114790413
+        y = -169.705627485
+        width = 776.999133448
+        height = 483.661038332
+    [[SHAPE 3]]
+        type = rectangle
+        x = -519.016377391
+        y = -548.714862201
+        width = 820.243866176
+        height = 367.695526217

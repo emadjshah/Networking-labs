@@ -1,0 +1,394 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10201
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 5
+        f1/1 = SW2 3
+        x = -225.340187158
+        y = -189.585575373
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        cnfg = R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 6
+        f1/1 = SW2 1
+        x = -220.011537822
+        y = 267.216162028
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R1 f1/0
+        2 = access 1 R2 f1/0
+        3 = access 1 R3 f1/0
+        4 = access 1 R4 f1/0
+        5 = access 1 R5 f1/0
+        6 = access 1 R6 f1/0
+        x = -485.122366364
+        y = 40.3309524417
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10301
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        cnfg = R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 2
+        f1/1 = SW3 1
+        x = 380.659812842
+        y = -221.854905783
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        cnfg = R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 4
+        f1/1 = SW4 1
+        x = 428.390482432
+        y = 248.145094217
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R6 f1/1
+        2 = access 1 R7 f1/0
+        3 = access 1 R5 f1/1
+        4 = access 1 R8 f1/0
+        x = 119.877633636
+        y = 37.3309524417
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 1
+        x = -920.016377391
+        y = -293.109739779
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -926.516599602
+        y = -94.6446609407
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10101
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 4
+        x = -930.938166904
+        y = 332.873016278
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        x = -916.938166904
+        y = 105.142346688
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10401
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R9]]
+        console = 2109
+        aux = 2509
+        cnfg = R9.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 3
+        x = 1134.65981284
+        y = -370.124236194
+        z = 1.0
+    [[ROUTER R10]]
+        console = 2110
+        aux = 2510
+        cnfg = R10.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 2
+        x = 1112.65981284
+        y = -127.854905783
+        z = 1.0
+        hx = 12.0
+        hy = -19.0
+    [[ETHSW SW3]]
+        1 = access 1 R7 f1/1
+        2 = access 1 R10 f1/0
+        3 = access 1 R9 f1/0
+        x = 813.505050634
+        y = -214.828427125
+        z = 1.0
+[127.0.0.1:7205]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10501
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        console = 2112
+        aux = 2512
+        cnfg = R12.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 2
+        x = 1142.92914325
+        y = 362.145094217
+        z = 1.0
+        hx = 10.0
+        hy = -25.0
+    [[ROUTER R11]]
+        console = 2111
+        aux = 2511
+        cnfg = R11.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 3
+        x = 1130.65981284
+        y = 145.875763806
+        z = 1.0
+    [[ETHSW SW4]]
+        1 = access 1 R8 f1/1
+        2 = access 1 R12 f1/0
+        3 = access 1 R11 f1/0
+        x = 809.877633636
+        y = 252.330952442
+        z = 1.0
+        hx = 6.0
+        hy = -33.0
+[GNS3-DATA]
+    configs = .
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "R1(config-if)#ip summary-address rip 170.152.128.0 255.255.192.0\n"
+        x = -601.040764009
+        y = -560.386435076
+    [[NOTE 2]]
+        text = "Admin"
+        x = 1217.6378772
+        y = 353.195526217
+    [[NOTE 3]]
+        text = "All in version 2, except Router 8"
+        x = 523.259018078
+        y = 538.457502888
+    [[NOTE 4]]
+        text = "version 1"
+        x = 420.021428025
+        y = 299.455410847
+    [[NOTE 5]]
+        text = "configure IPs\nconfigure loopbacks\nrouter rip\nroute summarisation\npassive interface"
+        x = 158.391918986
+        y = -574.5285707
+    [[NOTE 6]]
+        text = "4.0.0.0/8"
+        x = 889.540330733
+        y = 162.276695297
+    [[NOTE 7]]
+        text = "3.0.0.0/8"
+        x = 930.552524041
+        y = -353.91125497
+    [[NOTE 8]]
+        text = "2.0.0.0/8\n"
+        x = 50.9116882454
+        y = -123.394444303
+    [[NOTE 9]]
+        text = "1.0.0.0/8\n"
+        x = -526.402020254
+        y = -213.227922061
+    [[NOTE 10]]
+        text = "f1/0"
+        x = -62.6610886029
+        y = 0.0855244360041
+        interface = R12 f1/0
+    [[NOTE 11]]
+        text = "f1/0"
+        x = -5.14519801261
+        y = 34.0392636228
+        interface = R11 f1/0
+    [[NOTE 12]]
+        text = "f1/0"
+        x = -43.2039488651
+        y = 9.57157657214
+        interface = R10 f1/0
+    [[NOTE 13]]
+        text = "f1/0"
+        x = -3.22157242354
+        y = 38.9704947237
+        interface = R9 f1/0
+    [[NOTE 14]]
+        text = "f1/1"
+        x = 72.9979420059
+        y = 21.5942472475
+        interface = R8 f1/1
+    [[NOTE 15]]
+        text = "f1/0"
+        x = 0.462409815691
+        y = -1.26596709784
+        interface = R8 f1/0
+    [[NOTE 16]]
+        text = "f1/1"
+        x = 72.9990838948
+        y = 21.7292832166
+        interface = R7 f1/1
+    [[NOTE 17]]
+        text = "f1/0"
+        x = 4.4353192815
+        y = 50.0010538275
+        interface = R7 f1/0
+    [[NOTE 18]]
+        text = "f1/1"
+        x = 65.9395348457
+        y = -0.693325982507
+        interface = R6 f1/1
+    [[NOTE 19]]
+        text = "f1/0"
+        x = 3.27597730924
+        y = -4.76719027241
+        interface = R6 f1/0
+    [[NOTE 20]]
+        text = "f1/1"
+        x = 66.6491395793
+        y = 43.6271913474
+        interface = R5 f1/1
+    [[NOTE 21]]
+        text = "f1/0"
+        x = 2.62745998283
+        y = 48.0289994603
+        interface = R5 f1/0
+    [[NOTE 22]]
+        text = "f1/0"
+        x = 105.378116973
+        y = -13.6508931478
+        interface = R4 f1/0
+    [[NOTE 23]]
+        text = "f1/0"
+        x = 112.133286792
+        y = 3.19264565815
+        interface = R3 f1/0
+    [[NOTE 24]]
+        text = "f1/0"
+        x = 109.940373453
+        y = 23.6089406444
+        interface = R2 f1/0
+    [[NOTE 25]]
+        text = "f1/0"
+        x = 101.884147921
+        y = 36.5176345238
+        interface = R1 f1/0
+    [[NOTE 26]]
+        text = "3"
+        x = 73.6451980126
+        y = 3.96073637721
+        interface = SW4 3
+    [[NOTE 27]]
+        text = "2"
+        x = 73.1783325456
+        y = 29.4291941898
+        interface = SW4 2
+    [[NOTE 28]]
+        text = "1"
+        x = -4.49794200586
+        y = 16.4057527525
+        interface = SW4 1
+    [[NOTE 29]]
+        text = "3"
+        x = 71.7215724235
+        y = -0.970494723674
+        interface = SW3 3
+    [[NOTE 30]]
+        text = "2"
+        x = 73.520182681
+        y = 28.4284234279
+        interface = SW3 2
+    [[NOTE 31]]
+        text = "1"
+        x = -4.4990838948
+        y = 16.2707167834
+        interface = SW3 1
+    [[NOTE 32]]
+        text = "4"
+        x = 68.0375901843
+        y = 39.2659670978
+        interface = SW2 4
+    [[NOTE 33]]
+        text = "3"
+        x = 1.85086042074
+        y = -5.62719134736
+        interface = SW2 3
+    [[NOTE 34]]
+        text = "2"
+        x = 64.0646807185
+        y = -12.0010538275
+        interface = SW2 2
+    [[NOTE 35]]
+        text = "1"
+        x = 2.56046515429
+        y = 38.6933259825
+        interface = SW2 1
+    [[NOTE 36]]
+        text = "6"
+        x = 65.2240226908
+        y = 42.7671902724
+        interface = SW1 6
+    [[NOTE 37]]
+        text = "5"
+        x = 65.8725400172
+        y = -10.0289994603
+        interface = SW1 5
+    [[NOTE 38]]
+        text = "4"
+        x = -5.76541860045
+        y = 41.7513982112
+        interface = SW1 4
+    [[NOTE 39]]
+        text = "3"
+        x = -35.1480054173
+        y = -1.96219827985
+        interface = SW1 3
+    [[NOTE 40]]
+        text = "2"
+        x = -39.2393633265
+        y = -35.1064153275
+        interface = SW1 2
+    [[NOTE 41]]
+        text = "1"
+        x = 4.79961826276
+        y = -53.6719634563
+        interface = SW1 1

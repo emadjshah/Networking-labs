@@ -1,0 +1,88 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3640]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        slot0 = NM-4T
+        s0/0 = R1 s0/0
+        slot1 = NM-4T
+        x = -657.0
+        y = -203.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        slot0 = NM-4T
+        s0/0 = R4 s0/0
+        s0/1 = R2 s0/0
+        s0/2 = R3 s0/1
+        slot1 = NM-4T
+        x = -365.0
+        y = -208.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        slot0 = NM-4T
+        s0/0 = R1 s0/1
+        slot1 = NM-4T
+        x = -53.0
+        y = -330.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        slot0 = NM-4T
+        s0/1 = R1 s0/2
+        slot1 = NM-4T
+        x = -58.0
+        y = -99.0
+        z = 1.0
+[GNS3-DATA]
+    configs = .
+    [[NOTE 1]]
+        text = "s0/1"
+        x = -5.44103970671
+        y = 10.9416788676
+        interface = R3 s0/1
+    [[NOTE 2]]
+        text = "s0/0"
+        x = -3.32140516753
+        y = 38.755760999
+        interface = R2 s0/0
+    [[NOTE 3]]
+        text = "s0/2"
+        x = 71.4410397067
+        y = 33.0583211324
+        interface = R1 s0/2
+    [[NOTE 4]]
+        text = "s0/1"
+        x = 69.3214051675
+        y = 5.24423900099
+        interface = R1 s0/1
+    [[NOTE 5]]
+        text = "s0/0"
+        x = -6.85647937199
+        y = 25.3854175622
+        interface = R1 s0/0
+    [[NOTE 6]]
+        text = "s0/0"
+        x = 72.856479372
+        y = 18.6145824378
+        interface = R4 s0/0

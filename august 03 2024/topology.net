@@ -1,0 +1,97 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R3 s0/1
+        s0/1 = R1 s0/1
+        x = 327.0
+        y = -108.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R2 s0/0
+        s0/1 = R4 s0/1
+        x = 28.0
+        y = -433.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R1 s0/0
+        s0/1 = R3 s0/0
+        x = 320.0
+        y = -426.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R2 s0/1
+        s0/1 = R4 s0/0
+        x = 673.0
+        y = -403.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "s0/1"
+        x = -47.4016600592
+        y = -9.16639319976
+        interface = R4 s0/1
+    [[NOTE 2]]
+        text = "s0/0"
+        x = 74.6466853393
+        y = -12.7056545863
+        interface = R4 s0/0
+    [[NOTE 3]]
+        text = "s0/1"
+        x = 2.35331466068
+        y = 47.7056545863
+        interface = R3 s0/1
+    [[NOTE 4]]
+        text = "s0/0"
+        x = -53.7367205352
+        y = -14.5818163544
+        interface = R3 s0/0
+    [[NOTE 5]]
+        text = "s0/1"
+        x = 72.7367205352
+        y = 26.5818163544
+        interface = R2 s0/1
+    [[NOTE 6]]
+        text = "s0/0"
+        x = -26.9619199454
+        y = 35.7449797349
+        interface = R2 s0/0
+    [[NOTE 7]]
+        text = "s0/1"
+        x = 8.40166005916
+        y = 51.1663931998
+        interface = R1 s0/1
+    [[NOTE 8]]
+        text = "s0/0"
+        x = 72.9619199454
+        y = 20.2550202651
+        interface = R1 s0/0

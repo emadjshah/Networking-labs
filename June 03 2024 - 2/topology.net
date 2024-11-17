@@ -1,0 +1,144 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3640]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2109
+        aux = 2509
+        cnfg = R4.cfg
+        slot0 = NM-4T
+        s0/1 = R6 s0/1
+        s0/2 = R3 s0/2
+        s0/3 = R5 s0/3
+        slot1 = NM-4T
+        x = -156.0
+        y = -332.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2106
+        aux = 2506
+        cnfg = R1.cfg
+        slot0 = NM-4T
+        s0/0 = R2 s0/0
+        slot1 = NM-4T
+        x = -816.0
+        y = -366.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2107
+        aux = 2507
+        cnfg = R2.cfg
+        slot0 = NM-4T
+        s0/0 = R1 s0/0
+        s0/1 = R3 s0/1
+        slot1 = NM-4T
+        x = -606.0
+        y = -350.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2108
+        aux = 2508
+        cnfg = R3.cfg
+        slot0 = NM-4T
+        s0/1 = R2 s0/1
+        s0/2 = R4 s0/2
+        slot1 = NM-4T
+        x = -380.0
+        y = -345.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10101
+    [[3640]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2110
+        aux = 2510
+        cnfg = R5.cfg
+        slot0 = NM-4T
+        s0/3 = R4 s0/3
+        slot1 = NM-4T
+        x = 85.0
+        y = -422.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2111
+        aux = 2511
+        cnfg = R6.cfg
+        slot0 = NM-4T
+        s0/1 = R4 s0/1
+        slot1 = NM-4T
+        x = 111.0
+        y = -218.0
+        z = 1.0
+[GNS3-DATA]
+    configs = .
+    [[NOTE 1]]
+        text = "R1:200.1.2.2\nR2: 200.2.3.3\nR3: 200.3.4.4\nR4: 200.4.5.5\n       200.4.6.6\nR5: 200.4.5.4\nR6: 200.4.6.4"
+        x = 563.0
+        y = -183.5
+    [[NOTE 2]]
+        text = "s0/1"
+        x = -6.99955206141
+        y = 21.8106989533
+        interface = R3 s0/1
+    [[NOTE 3]]
+        text = "s0/2"
+        x = 72.9424647237
+        y = 19.8553527579
+        interface = R3 s0/2
+    [[NOTE 4]]
+        text = "s0/1"
+        x = 72.9995520614
+        y = 22.1893010467
+        interface = R2 s0/1
+    [[NOTE 5]]
+        text = "s0/0"
+        x = -6.86199905078
+        y = 25.3197939207
+        interface = R2 s0/0
+    [[NOTE 6]]
+        text = "s0/0"
+        x = 72.8619990508
+        y = 18.6802060793
+        interface = R1 s0/0
+    [[NOTE 7]]
+        text = "s0/1"
+        x = -45.837011546
+        y = 14.2318092239
+        interface = R6 s0/1
+    [[NOTE 8]]
+        text = "s0/3"
+        x = -2.31385723869
+        y = 40.7864708481
+        interface = R5 s0/3
+    [[NOTE 9]]
+        text = "s0/3"
+        x = 68.3138572387
+        y = 3.21352915193
+        interface = R4 s0/3
+    [[NOTE 10]]
+        text = "s0/2"
+        x = -6.94246472374
+        y = 24.1446472421
+        interface = R4 s0/2
+    [[NOTE 11]]
+        text = "s0/1"
+        x = 68.837011546
+        y = 39.7681907761
+        interface = R4 s0/1

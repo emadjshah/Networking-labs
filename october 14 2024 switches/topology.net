@@ -1,0 +1,470 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10201
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        model = 3725
+        console = 2112
+        aux = 2512
+        cnfg = configs\R12.cfg
+        f0/0 = R19 f1/2
+        x = 597.871283174
+        y = 0.620274323033
+        z = 1.0
+    [[ROUTER R10]]
+        model = 3725
+        console = 2110
+        aux = 2510
+        cnfg = configs\R10.cfg
+        f0/0 = R18 f1/6
+        f0/1 = R19 f1/0
+        x = -191.073159853
+        y = 344.683332908
+        z = 1.0
+        hx = 19.0710678119
+        hy = -27.8284271247
+    [[ROUTER R11]]
+        model = 3725
+        console = 2111
+        aux = 2511
+        cnfg = configs\R11.cfg
+        f0/0 = R19 f1/1
+        x = 390.391052434
+        y = 4.86291501015
+        z = 1.0
+    [[ROUTER R9]]
+        model = 3725
+        console = 2109
+        aux = 2509
+        cnfg = configs\R9.cfg
+        f0/0 = R18 f1/5
+        x = -528.661038332
+        y = 257.002092041
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10301
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R16]]
+        model = 3725
+        console = 2116
+        aux = 2516
+        cnfg = configs\R16.cfg
+        f0/0 = R20 f1/3
+        x = 760.915005776
+        y = 591.352380466
+        z = 1.0
+    [[ROUTER R14]]
+        model = 3725
+        console = 2114
+        aux = 2514
+        cnfg = configs\R14.cfg
+        f0/0 = R20 f1/1
+        x = 427.347329833
+        y = 586.104689145
+        z = 1.0
+    [[ROUTER R15]]
+        model = 3725
+        console = 2115
+        aux = 2515
+        cnfg = configs\R15.cfg
+        f0/0 = R20 f1/2
+        x = 582.501658765
+        y = 588.93311627
+        z = 1.0
+        hx = -20.5269119346
+        hy = -20.7573593129
+    [[ROUTER R13]]
+        model = 3725
+        console = 2113
+        aux = 2513
+        cnfg = configs\R13.cfg
+        f0/0 = R19 f1/3
+        x = 788.380951166
+        y = 4.86291501015
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        f0/0 = R17 f1/4
+        x = -736.550432
+        y = -161.195959493
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        f0/0 = R17 f1/3
+        x = -927.060099992
+        y = -166.852813742
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = R17 f1/2
+        x = -1114.74134086
+        y = -175.338095117
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = R17 f1/6
+        x = -819.021428025
+        y = -514.13708499
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R8]]
+        model = 3725
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        f0/0 = R18 f1/4
+        x = -712.099638512
+        y = 238.61731573
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        f0/0 = R18 f1/3
+        x = -895.538238692
+        y = 230.132034356
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        f0/0 = R18 f1/2
+        x = -1118.57481862
+        y = 237.203102168
+        z = 1.0
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        f0/0 = R17 f1/5
+        x = -524.827560573
+        y = -161.195959493
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10401
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R18]]
+        model = 3725
+        console = 2118
+        aux = 2518
+        slot1 = NM-16ESW
+        f1/0 = R17 f1/0
+        f1/1 = R17 f1/1
+        f1/2 = R6 f0/0
+        f1/3 = R7 f0/0
+        f1/4 = R8 f0/0
+        f1/5 = R9 f0/0
+        f1/6 = R10 f0/0
+        symbol = EtherSwitch router
+        x = -805.167314455
+        y = 74.7304473783
+        z = 1.0
+        hx = 53.9974746831
+        hy = -5.20101012678
+    [[ROUTER R19]]
+        model = 3725
+        console = 2119
+        aux = 2519
+        slot1 = NM-16ESW
+        f1/0 = R10 f0/1
+        f1/1 = R11 f0/0
+        f1/2 = R12 f0/0
+        f1/3 = R13 f0/0
+        f1/4 = R20 f1/0
+        symbol = EtherSwitch router
+        x = 593.080735804
+        y = 189.281745931
+        z = 1.0
+        hx = -44.9974746831
+        hy = 1.87005768509
+    [[ROUTER R17]]
+        model = 3725
+        console = 2117
+        aux = 2517
+        slot1 = NM-16ESW
+        f1/0 = R18 f1/0
+        f1/1 = R18 f1/1
+        f1/2 = R2 f0/0
+        f1/3 = R3 f0/0
+        f1/4 = R4 f0/0
+        f1/5 = R5 f0/0
+        f1/6 = R1 f0/0
+        f1/7 = nio_gen_eth:\device\npf_{0bcafb3d-7f6a-473c-8117-3deb26a8fdbe}
+        symbol = EtherSwitch router
+        x = -818.90028715
+        y = -329.73463146
+        z = 1.0
+        hx = -26.6126983722
+        hy = -29.2426406871
+    [[ROUTER R20]]
+        model = 3725
+        console = 2120
+        aux = 2520
+        slot1 = NM-16ESW
+        f1/0 = R19 f1/4
+        f1/1 = R14 f0/0
+        f1/2 = R15 f0/0
+        f1/3 = R16 f0/0
+        symbol = EtherSwitch router
+        x = 596.914213562
+        y = 452.325468532
+        z = 1.0
+        hx = 29.9558441227
+        hy = -32.0710678119
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "f0/0"
+        x = 31.4135651177
+        y = 61.9685279234
+        interface = R1 f0/0
+    [[NOTE 2]]
+        text = "f1/0"
+        x = -27.4087814437
+        y = -32.0521021023
+        interface = R20 f1/0
+    [[NOTE 3]]
+        text = "f1/2"
+        x = -24.6271202782
+        y = 66.2761759943
+        interface = R20 f1/2
+    [[NOTE 4]]
+        text = "f1/1"
+        x = -70.5421710306
+        y = 37.4790244535
+        interface = R20 f1/1
+    [[NOTE 5]]
+        text = "f1/3"
+        x = 35.4925676724
+        y = 68.3229753583
+        interface = R20 f1/3
+    [[NOTE 6]]
+        text = "f1/6"
+        x = 25.6722213199
+        y = -37.681731359
+        interface = R17 f1/6
+    [[NOTE 7]]
+        text = "f1/5"
+        x = 93.0178886328
+        y = 27.3248672284
+        interface = R17 f1/5
+    [[NOTE 8]]
+        text = "f1/1"
+        x = 23.2744477821
+        y = 103.244612296
+        interface = R17 f1/1
+    [[NOTE 9]]
+        text = "f1/0"
+        x = -24.054333623
+        y = 76.2048852831
+        interface = R17 f1/0
+    [[NOTE 10]]
+        text = "f1/2"
+        x = -86.2066047881
+        y = 28.0968600937
+        interface = R17 f1/2
+    [[NOTE 11]]
+        text = "f1/3"
+        x = -66.3798028634
+        y = 71.5813188423
+        interface = R17 f1/3
+    [[NOTE 12]]
+        text = "f1/4"
+        x = 54.3481106418
+        y = 50.2418383328
+        interface = R17 f1/4
+    [[NOTE 13]]
+        text = "f0/0"
+        x = -58.5595191931
+        y = -0.209643539282
+        interface = R5 f0/0
+    [[NOTE 14]]
+        text = "f0/0"
+        x = 68.3982212865
+        y = 3.37297850569
+        interface = R6 f0/0
+    [[NOTE 15]]
+        text = "f0/0"
+        x = 59.0352095639
+        y = -11.8045502946
+        interface = R7 f0/0
+    [[NOTE 16]]
+        text = "f1/4"
+        x = -33.3140899838
+        y = 56.4246851043
+        interface = R19 f1/4
+    [[NOTE 17]]
+        text = "f1/1"
+        x = -22.3766696718
+        y = -48.7775693495
+        interface = R19 f1/1
+    [[NOTE 18]]
+        text = "f1/0"
+        x = -104.177224282
+        y = 13.2332612769
+        interface = R19 f1/0
+    [[NOTE 19]]
+        text = "f1/3"
+        x = 58.3288098587
+        y = 1.28556156233
+        interface = R19 f1/3
+    [[NOTE 20]]
+        text = "f1/2"
+        x = 49.3923058835
+        y = -57.4223725877
+        interface = R19 f1/2
+    [[NOTE 21]]
+        text = "f1/3"
+        x = -52.8611113717
+        y = 57.3045502946
+        interface = R18 f1/3
+    [[NOTE 22]]
+        text = "f1/2"
+        x = -67.8809773438
+        y = 25.1564587458
+        interface = R18 f1/2
+    [[NOTE 23]]
+        text = "f1/1"
+        x = 36.1160877234
+        y = -29.0352159553
+        interface = R18 f1/1
+    [[NOTE 24]]
+        text = "f1/0"
+        x = -46.5680327411
+        y = -20.7196039088
+        interface = R18 f1/0
+    [[NOTE 25]]
+        text = "f1/5"
+        x = 70.3163783338
+        y = 65.6418028153
+        interface = R18 f1/5
+    [[NOTE 26]]
+        text = "f1/4"
+        x = 9.79106173926
+        y = 64.5776925009
+        interface = R18 f1/4
+    [[NOTE 27]]
+        text = "f1/6"
+        x = 149.902934521
+        y = 40.7735078462
+        interface = R18 f1/6
+    [[NOTE 28]]
+        text = "f0/0"
+        x = -47.1717173931
+        y = -0.342812942056
+        interface = R9 f0/0
+    [[NOTE 29]]
+        text = "f0/0"
+        x = 68.33907242
+        y = 3.26100428259
+        interface = R2 f0/0
+    [[NOTE 30]]
+        text = "f0/0"
+        x = 54.1691247447
+        y = -11.9391832186
+        interface = R3 f0/0
+    [[NOTE 31]]
+        text = "f0/0"
+        x = -46.0433704183
+        y = -21.9061196256
+        interface = R8 f0/0
+    [[NOTE 32]]
+        text = "f0/0"
+        x = 75.2198154223
+        y = 40.5374539793
+        interface = R11 f0/0
+    [[NOTE 33]]
+        text = "f0/1"
+        x = 72.1675562899
+        y = 13.8819624123
+        interface = R10 f0/1
+    [[NOTE 34]]
+        text = "f0/0"
+        x = -51.8049547747
+        y = 4.72649215376
+        interface = R10 f0/0
+    [[NOTE 35]]
+        text = "f0/0"
+        x = 2.99961726603
+        y = 48.4570791248
+        interface = R13 f0/0
+    [[NOTE 36]]
+        text = "f0/0"
+        x = 30.3208975521
+        y = 61.9101792789
+        interface = R12 f0/0
+    [[NOTE 37]]
+        text = "f0/0"
+        x = 64.7423439674
+        y = -5.21982680819
+        interface = R15 f0/0
+    [[NOTE 38]]
+        text = "f0/0"
+        x = 63.9883471614
+        y = -3.29273295246
+        interface = R14 f0/0
+    [[NOTE 39]]
+        text = "f0/0"
+        x = -41.1029446377
+        y = -14.6413332695
+        interface = R4 f0/0
+    [[NOTE 40]]
+        text = "f0/0"
+        x = -44.8748186663
+        y = -10.0950532969
+        interface = R16 f0/0
+    [[Cloud C1]]
+        x = -554.675756957
+        y = -460.678282274
+        hx = 70.1568542495
+        hy = -26.4142135624
+        z = 1.0
+        connections = R17:f1/7:nio_gen_eth:\device\npf_{0bcafb3d-7f6a-473c-8117-3deb26a8fdbe}

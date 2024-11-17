@@ -1,0 +1,147 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = D:\Emad\Apps\Networking\Firewall\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R4 f0/0
+        e1 = R1 f0/0
+        e2 = R2 f0/0
+        e3 = R3 f0/0
+        e4 = R5 f0/0
+        x = -183.0
+        y = -49.0
+        z = 1.0
+        hx = -29.0
+        hy = -23.0
+[127.0.0.1:7200]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = PIX1 e0
+        cnfg = configs\R4.cfg
+        x = -561.422025984
+        y = -62.1375808488
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = PIX1 e1
+        cnfg = configs\R1.cfg
+        x = -449.0
+        y = 150.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = PIX1 e2
+        cnfg = configs\R2.cfg
+        x = 27.9220259844
+        y = 159.565109648
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = PIX1 e3
+        cnfg = configs\R3.cfg
+        x = 273.577974016
+        y = -49.8624191512
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Apps\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        f0/0 = PIX1 e4
+        cnfg = configs\R5.cfg
+        x = -184.077974016
+        y = -325.565109648
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 1.0
+    m22 = 1.0
+    [[NOTE 1]]
+        text = "DPAT (192.1.1.1)"
+        x = -26.0
+        y = -103.5
+    [[NOTE 2]]
+        text = "Outside\n200.0.0.0/30"
+        x = -130.0
+        y = -183.5
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 33.1559077107
+        y = 61.9996961587
+        interface = R5 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 72.9759167204
+        y = 23.3878336932
+        interface = R4 f0/0
+    [[NOTE 5]]
+        text = "f0/0"
+        x = -6.99992864314
+        y = 22.0755549029
+        interface = R3 f0/0
+    [[NOTE 6]]
+        text = "f0/0"
+        x = 4.55726063651
+        y = -6.12491026653
+        interface = R2 f0/0
+    [[NOTE 7]]
+        text = "f0/0"
+        x = 65.0288750357
+        y = -1.96145162443
+        interface = R1 f0/0
+    [[NOTE 8]]
+        text = "e4"
+        x = 45.8440922893
+        y = -30.9996961587
+        interface = PIX1 e4
+    [[NOTE 9]]
+        text = "e3"
+        x = 92.9999286431
+        y = 23.9244450971
+        interface = PIX1 e3
+    [[NOTE 10]]
+        text = "e2"
+        x = 61.4427393635
+        y = 50.1249102665
+        interface = PIX1 e2
+    [[NOTE 11]]
+        text = "e1"
+        x = 0.971124964335
+        y = 45.9614516244
+        interface = PIX1 e1
+    [[NOTE 12]]
+        text = "e0"
+        x = -44.9759167204
+        y = 22.6121663068
+        interface = PIX1 e0

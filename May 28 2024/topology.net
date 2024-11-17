@@ -1,0 +1,99 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3640]]
+        image = D:\Emad\Apps\Networking\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = SW2 1
+        x = -919.709811567
+        y = 217.075251894
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = SW1 2
+        x = -911.41125497
+        y = -432.048773235
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = SW1 1
+        x = -910.406204336
+        y = -217.088311755
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = SW2 2
+        x = -920.714862201
+        y = 0.700576850888
+        z = 1.0
+        hx = 14.6715728753
+        hy = -26.4142135624
+    [[ETHSW SW1]]
+        1 = access 1 R2 f0/0
+        2 = access 1 R1 f0/0
+        3 = access 1 R5 f1/0
+        x = -724.222004876
+        y = -320.05591591
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R4 f0/0
+        2 = access 1 R3 f0/0
+        x = -722.807791313
+        y = 148.048773235
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10101
+    [[3640]]
+        image = D:\Emad\Apps\Networking\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = R6 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = SW1 3
+        slot2 = NM-1FE-TX
+        slot3 = NM-1FE-TX
+        x = -394.031529293
+        y = -88.3948775786
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = R5 f0/0
+        x = 24.7981233214
+        y = -78.9045455705
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187

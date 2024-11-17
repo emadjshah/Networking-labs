@@ -1,0 +1,135 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = D:\Emad\Apps\Networking\Firewall\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R2 e0/0
+        e1 = R4 e0/0
+        e2 = R1 e0/0
+        e3 = R3 e0/0
+        x = -200.0
+        y = -98.0
+        z = 1.0
+        hx = -30.0
+        hy = -26.0
+[127.0.0.1:7200]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10001
+    [[3640]]
+        image = D:\Emad\Apps\Networking\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2112
+        aux = 2512
+        cnfg = configs\R4.cfg
+        slot0 = NM-4E
+        e0/0 = PIX1 e1
+        x = -709.161471607
+        y = -98.5147186258
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2109
+        aux = 2509
+        cnfg = configs\R1.cfg
+        slot0 = NM-4E
+        e0/0 = PIX1 e2
+        x = -202.443650814
+        y = 348.646752982
+        z = 1.0
+        hx = -6.5
+        hy = -25.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2110
+        aux = 2510
+        cnfg = configs\R2.cfg
+        slot0 = NM-4E
+        e0/0 = PIX1 e0
+        x = -193.686291501
+        y = -505.119841047
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2111
+        aux = 2511
+        cnfg = configs\R3.cfg
+        slot0 = NM-4E
+        e0/0 = PIX1 e3
+        x = 289.161471607
+        y = -100.455844123
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "172.16.0.0/16"
+        x = -145.663996924
+        y = 87.3233764909
+    [[NOTE 2]]
+        text = "10.1.1.0/24\n10.11.11.0/24"
+        x = -185.261976671
+        y = 405.521428025
+    [[NOTE 3]]
+        text = "172.21.0.0/16\n172.22.0.0/16"
+        x = 370.523953342
+        y = -114.909162928
+    [[NOTE 4]]
+        text = "Inside-100"
+        x = -135.764501988
+        y = 156.41883092
+        color = "#2e9eff"
+    [[NOTE 5]]
+        text = "192.168.14.0/24\n192.168.44.0/24"
+        x = -899.439825669
+        y = -102.181240867
+    [[NOTE 6]]
+        text = "Outside-0"
+        x = -159.806132548
+        y = -250.673664916
+        color = "#2e9eff"
+    [[NOTE 7]]
+        text = "         OSPF\n192.168.4.0/24"
+        x = -510.531096017
+        y = -137.536579926
+        color = "#47a6ff"
+    [[NOTE 8]]
+        text = "RIP"
+        x = -147.078210487
+        y = -358.153895657
+    [[NOTE 9]]
+        text = "200.1.1.0/30"
+        x = -165.462986798
+        y = -315.727488785
+    [[NOTE 10]]
+        text = "         OSPF\n192.168.4.0/24"
+        x = -11.313708499
+        y = -149.051298552
+        color = "#47a6ff"
+    [[NOTE 11]]
+        text = "EIGRP - 172"
+        x = -151.320851174
+        y = 39.2401153702
+    [[NOTE 12]]
+        text = "DMZ1 - 50"
+        x = 26.8700576851
+        y = -64.1984848098
+        color = "#0055ff"
+    [[NOTE 13]]
+        text = "DMZ2 - 50"
+        x = -476.58997052
+        y = -68.2401153702
+        color = "#0055ff"
