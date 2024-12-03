@@ -1,0 +1,104 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = d:\users\emad\temp\emad\GNS3_7codtx\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        cnfg = configs\R1.recovered.cfg
+        x = -365.0
+        y = -100.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/1
+        cnfg = configs\R2.recovered.cfg
+        x = 1.5
+        y = -95.9326673974
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/1 = R2 f0/1
+        cnfg = configs\R3.recovered.cfg
+        x = 402.5
+        y = -91.0673326026
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "Tunnel"
+        x = -775.0
+        y = -429.5
+    [[NOTE 2]]
+        text = "GRE VPN Tunnel\n10.0.0.0/8"
+        x = -43.0
+        y = -12.5
+    [[NOTE 3]]
+        text = "E"
+        x = -344.0
+        y = -84.5
+    [[NOTE 4]]
+        text = "E"
+        x = 427.0
+        y = -75.5
+    [[NOTE 5]]
+        text = "172.16.0.0/16\n172.17.0.0/16\n172.18.0.0/16"
+        x = 485.0
+        y = -111.5
+    [[NOTE 6]]
+        text = "ISP"
+        x = 16.0
+        y = -78.5
+    [[NOTE 7]]
+        text = "194.1.1.4/30"
+        x = 187.0
+        y = -115.5
+    [[NOTE 8]]
+        text = "194.1.1.8/30"
+        x = -211.0
+        y = -116.5
+    [[NOTE 9]]
+        text = "192.168.1.0/24\n192.168.2.0/24\n192.168.3.0/24"
+        x = -523.0
+        y = -125.5
+    [[NOTE 10]]
+        text = "f0/1"
+        x = -45.96413512
+        y = 28.3065112598
+        interface = R3 f0/1
+    [[NOTE 11]]
+        text = "f0/1"
+        x = 79.96413512
+        y = 25.6934887402
+        interface = R2 f0/1
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -45.9975370176
+        y = 28.5561165448
+        interface = R2 f0/0
+    [[NOTE 13]]
+        text = "f0/0"
+        x = 72.9975370176
+        y = 22.4438834552
+        interface = R1 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -294.0
+        y = -25.0
+        width = 690.0
+        height = 92.0
+        border_color = "#00007f"
+        border_style = 2

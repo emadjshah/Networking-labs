@@ -1,0 +1,80 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = d:\users\emad\temp\emad\GNS3_pn9bpg\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        cnfg = configs\R1.cfg
+        x = -576.0
+        y = -150.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/0
+        cnfg = configs\R2.cfg
+        x = -113.0
+        y = -149.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R2 f0/1
+        cnfg = configs\R3.cfg
+        x = 353.0
+        y = -143.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "IPSec"
+        x = -158.0
+        y = -250.5
+    [[NOTE 2]]
+        text = "172.16.0.0/16\n172.17.0.0/16\n172.18.0.0/16"
+        x = 443.0
+        y = -194.5
+    [[NOTE 3]]
+        text = "192.168.1.0/24\n192.168.2.0/24\n192.168.3.0/24"
+        x = -738.0
+        y = -199.5
+    [[NOTE 4]]
+        text = "194.1.1.4/30"
+        x = 89.0
+        y = -160.5
+    [[NOTE 5]]
+        text = "194.1.1.8/30"
+        x = -405.0
+        y = -158.5
+    [[NOTE 6]]
+        text = "f0/0"
+        x = -44.9966848234
+        y = 21.4850212254
+        interface = R3 f0/0
+    [[NOTE 7]]
+        text = "f0/1"
+        x = 72.9966848234
+        y = 22.5149787746
+        interface = R2 f0/1
+    [[NOTE 8]]
+        text = "f0/0"
+        x = -45.9999067033
+        y = 25.913607113
+        interface = R2 f0/0
+    [[NOTE 9]]
+        text = "f0/0"
+        x = 72.9999067033
+        y = 22.086392887
+        interface = R1 f0/0

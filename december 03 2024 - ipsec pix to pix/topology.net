@@ -1,0 +1,91 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = D:\Emad\Documents\Networking\Firewall\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R1 f0/0
+        e1 = R2 f0/0
+        e2 = R5 f0/0
+        x = -444.0
+        y = -97.0
+        z = 1.0
+    [[PIX PIX2]]
+        e0 = R5 f0/1
+        e1 = R3 f0/0
+        e2 = R4 f0/0
+        x = 261.0
+        y = -75.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = PIX2 e2
+        cnfg = configs\R4.cfg
+        x = 630.0
+        y = 101.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = PIX1 e0
+        cnfg = configs\R1.cfg
+        x = -723.0
+        y = -264.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = PIX1 e1
+        cnfg = configs\R2.cfg
+        x = -724.0
+        y = 80.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = PIX2 e1
+        cnfg = configs\R3.cfg
+        x = 627.0
+        y = -267.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = D:\Users\Emad\TEMP\Emad
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        f0/0 = PIX1 e2
+        f0/1 = PIX2 e0
+        cnfg = configs\R5.cfg
+        x = -112.0
+        y = -79.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
