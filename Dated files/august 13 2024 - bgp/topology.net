@@ -1,0 +1,118 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        f0/0 = R3 f0/1
+        f0/1 = R1 f0/1
+        slot1 = NM-1FE-TX
+        x = -527.0
+        y = -22.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = R2 f0/0
+        f0/1 = R4 f0/1
+        x = -528.0
+        y = -379.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/0
+        x = 310.0
+        y = -373.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        f0/0 = R2 f0/1
+        f0/1 = R4 f0/0
+        x = 305.0
+        y = -27.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "f0/1"
+        x = 32.8879556216
+        y = -17.9998430754
+        interface = R4 f0/1
+    [[NOTE 2]]
+        text = "f0/0"
+        x = 72.99927771
+        y = 21.7596197253
+        interface = R4 f0/0
+    [[NOTE 3]]
+        text = "f0/1"
+        x = -53.99927771
+        y = 32.2403802747
+        interface = R3 f0/1
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 33.5779743367
+        y = -17.9958241028
+        interface = R3 f0/0
+    [[NOTE 5]]
+        text = "f0/1"
+        x = 32.4220256633
+        y = 61.9958241028
+        interface = R2 f0/1
+    [[NOTE 6]]
+        text = "f0/0"
+        x = -36.9989747548
+        y = 46.7136111593
+        interface = R2 f0/0
+    [[NOTE 7]]
+        text = "f0/1"
+        x = 33.1120443784
+        y = 61.9998430754
+        interface = R1 f0/1
+    [[NOTE 8]]
+        text = "f0/0"
+        x = 72.9989747548
+        y = 22.2863888407
+        interface = R1 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = 293.0
+        y = -66.0
+        width = 200.0
+        height = 100.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -642.0
+        y = -58.0
+        width = 200.0
+        height = 100.0
+    [[SHAPE 3]]
+        type = rectangle
+        x = -620.0
+        y = -431.0
+        width = 200.0
+        height = 100.0
+    [[SHAPE 4]]
+        type = rectangle
+        x = 269.0
+        y = -428.0
+        width = 200.0
+        height = 100.0

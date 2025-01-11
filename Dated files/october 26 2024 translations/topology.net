@@ -1,0 +1,243 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = d:\users\emad\temp\emad\GNS3_cb7oeg\working
+    udp = 10201
+    [[7200]]
+        image = D:\Emad\Apps\Networking\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2117
+        aux = 2517
+        slot1 = PA-2FE-TX
+        f1/0 = R6 f1/0
+        f1/1 = R1 f1/0
+        slot2 = PA-2FE-TX
+        f2/0 = R2 f1/0
+        f2/1 = R3 f1/0
+        slot3 = PA-2FE-TX
+        f3/0 = R4 f1/0
+        cnfg = configs\R5.cfg
+        x = -154.0
+        y = -196.0
+        z = 1.0
+        hx = -4.5
+        hy = -28.0
+    [[ROUTER R6]]
+        console = 2118
+        aux = 2518
+        slot1 = PA-2FE-TX
+        f1/0 = R5 f1/0
+        cnfg = configs\R6.cfg
+        x = -148.0
+        y = -478.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = d:\users\emad\temp\emad\GNS3_cb7oeg\working
+    udp = 10001
+    [[7200]]
+        image = D:\Emad\Apps\Networking\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2113
+        aux = 2513
+        slot1 = PA-2FE-TX
+        f1/0 = R5 f1/1
+        cnfg = configs\R1.cfg
+        x = -722.0
+        y = 59.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2114
+        aux = 2514
+        slot1 = PA-2FE-TX
+        f1/0 = R5 f2/0
+        slot2 = PA-2FE-TX
+        slot3 = PA-2FE-TX
+        cnfg = configs\R2.cfg
+        x = -443.0
+        y = 79.0
+        z = 1.0
+        hx = 6.5
+        hy = -25.0
+[127.0.0.1:7201]
+    workingdir = d:\users\emad\temp\emad\GNS3_cb7oeg\working
+    udp = 10101
+    [[7200]]
+        image = D:\Emad\Apps\Networking\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2116
+        aux = 2516
+        slot1 = PA-2FE-TX
+        f1/0 = R5 f3/0
+        cnfg = configs\R4.cfg
+        x = 358.0
+        y = 102.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2115
+        aux = 2515
+        slot1 = PA-2FE-TX
+        f1/0 = R5 f2/1
+        cnfg = configs\R3.cfg
+        x = 44.0
+        y = 95.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 1.0
+    m22 = 1.0
+    [[NOTE 1]]
+        text = "NAT PAT"
+        x = 514.0
+        y = -452.5
+    [[NOTE 2]]
+        text = "EDGE"
+        x = -73.0
+        y = -197.5
+    [[NOTE 3]]
+        text = "ISP"
+        x = -200.0
+        y = -478.5
+    [[NOTE 4]]
+        text = "SPAT ( 180.101.0.1 -> 1030)"
+        x = 463.0
+        y = 152.5
+        color = "#ff0000"
+    [[NOTE 5]]
+        text = "SPAT (180.101.0.1 -> 1040)"
+        x = -106.0
+        y = 213.5
+        color = "#ff0000"
+    [[NOTE 6]]
+        text = "DPAT ( 180.101.0.1)"
+        x = 72.0
+        y = -258.5
+        color = "#ff0000"
+    [[NOTE 7]]
+        text = "DNAT ( 170.100.0.1 - 170.100.0.10)"
+        x = -649.0
+        y = -267.5
+        color = "#ff0000"
+    [[NOTE 8]]
+        text = "SNAT = 170.100.0.12"
+        x = -982.0
+        y = 150.5
+        color = "#ff0000"
+    [[NOTE 9]]
+        text = "(SNAT = 170.100.0.11)"
+        x = -283.0
+        y = 84.5
+        color = "#ff0000"
+    [[NOTE 10]]
+        text = "192.168.192.4/30"
+        x = 288.0
+        y = 173.5
+    [[NOTE 11]]
+        text = "192.168.192.8/30"
+        x = 288.0
+        y = 198.5
+    [[NOTE 12]]
+        text = "192.168.192.0/30"
+        x = 173.0
+        y = -59.5
+    [[NOTE 13]]
+        text = "172.30.0.0/16"
+        x = -46.0
+        y = 166.5
+    [[NOTE 14]]
+        text = "172.30.0.8/16"
+        x = -47.0
+        y = 188.5
+    [[NOTE 15]]
+        text = "172.29.0.0/16"
+        x = -18.0
+        y = -29.5
+    [[NOTE 16]]
+        text = "172.22.0.0/16"
+        x = -477.0
+        y = 154.5
+    [[NOTE 17]]
+        text = "172.23.0.0/16"
+        x = -478.0
+        y = 178.5
+    [[NOTE 18]]
+        text = "172.21.0.0/16"
+        x = -431.0
+        y = -35.5
+    [[NOTE 19]]
+        text = "192.168.102.0/24"
+        x = -771.0
+        y = 124.5
+    [[NOTE 20]]
+        text = "192.168.103.0/24"
+        x = -781.0
+        y = 152.5
+    [[NOTE 21]]
+        text = "192.168.101.0/24"
+        x = -589.0
+        y = -74.5
+    [[NOTE 22]]
+        text = "11.0.0.0/30"
+        x = -87.0
+        y = -362.5
+    [[NOTE 23]]
+        text = "f1/0"
+        x = 32.1399837939
+        y = 61.9907535829
+        interface = R6 f1/0
+    [[NOTE 24]]
+        text = "f3/0"
+        x = 117.570731286
+        y = 51.1212459439
+        interface = R5 f3/0
+    [[NOTE 25]]
+        text = "f2/1"
+        x = 79.5017253243
+        y = 72.0707175221
+        interface = R5 f2/1
+    [[NOTE 26]]
+        text = "f2/0"
+        x = -87.9774370033
+        y = 71.5736857297
+        interface = R5 f2/0
+    [[NOTE 27]]
+        text = "f1/1"
+        x = -101.491271238
+        y = 38.3825249398
+        interface = R5 f1/1
+    [[NOTE 28]]
+        text = "f1/0"
+        x = 35.8600162061
+        y = -24.9907535829
+        interface = R5 f1/0
+    [[NOTE 29]]
+        text = "f1/0"
+        x = -52.5707312862
+        y = -4.12124594393
+        interface = R4 f1/0
+    [[NOTE 30]]
+        text = "f1/0"
+        x = -52.5017253243
+        y = -18.0707175221
+        interface = R3 f1/0
+    [[NOTE 31]]
+        text = "f1/0"
+        x = 65.9774370033
+        y = -10.5736857297
+        interface = R2 f1/0
+    [[NOTE 32]]
+        text = "f1/0"
+        x = 69.4912712384
+        y = 5.61747506021
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -983.0
+        y = -228.0
+        width = 1777.0
+        height = 488.0

@@ -1,0 +1,104 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = d:\users\emad\temp\emad\GNS3_wi5fnt\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        f0/0 = R2 f0/0
+        f0/1 = R3 f0/0
+        cnfg = configs\R1.cfg
+        x = -512.0
+        y = -80.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        f0/0 = R1 f0/0
+        cnfg = configs\R2.cfg
+        x = 84.0
+        y = -240.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        f0/0 = R1 f0/1
+        cnfg = configs\R3.cfg
+        x = 112.0
+        y = 91.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "192.168.154.0/24\n192.168.156.64/26\n"
+        x = -694.0
+        y = -142.5
+    [[NOTE 2]]
+        text = "192.168.172.16/29\n192.168.172.32/29\n"
+        x = -691.0
+        y = -23.5
+    [[NOTE 3]]
+        text = "197.89.42.32/27\n"
+        x = -274.0
+        y = -181.5
+    [[NOTE 4]]
+        text = "197.89.42.64/27\n"
+        x = -215.0
+        y = -14.5
+    [[NOTE 5]]
+        text = "\n172.21.16.0/20\n172.21.32.0/20\n"
+        x = 170.0
+        y = -256.5
+    [[NOTE 6]]
+        text = "172.28.0.0/16\n172.29.128.0/17"
+        x = 172.0
+        y = 170.5
+    [[NOTE 7]]
+        text = "Site 1"
+        x = -658.0
+        y = -196.5
+    [[NOTE 8]]
+        text = "IPSec"
+        x = -193.0
+        y = -409.5
+    [[NOTE 9]]
+        text = "Site 3"
+        x = 215.0
+        y = 112.5
+    [[NOTE 10]]
+        text = "Site 2"
+        x = 209.0
+        y = -308.5
+    [[NOTE 11]]
+        text = "IPSec 1 - R1 <---->R2\nIPSec 2 - R1 <---->R3\n"
+        x = -238.0
+        y = 193.5
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -42.5776839246
+        y = 13.4282308476
+        interface = R3 f0/0
+    [[NOTE 13]]
+        text = "f0/0"
+        x = -35.6321303329
+        y = 39.3710417001
+        interface = R2 f0/0
+    [[NOTE 14]]
+        text = "f0/1"
+        x = 52.5776839246
+        y = 38.5717691524
+        interface = R1 f0/1
+    [[NOTE 15]]
+        text = "f0/0"
+        x = 53.6321303329
+        y = -24.3710417001
+        interface = R1 f0/0

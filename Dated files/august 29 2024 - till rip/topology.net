@@ -1,0 +1,383 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10201
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        idlepc = 0x6062db80
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -981.557574675
+        y = -291.602163828
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        cnfg = R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 1
+        x = -971.435641585
+        y = -65.7371567773
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R6 f1/0
+        2 = access 1 R7 f1/0
+        3 = access 1 R1 f1/0
+        x = -715.888093841
+        y = 62.0273452108
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10301
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        idlepc = 0x6062db80
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        cnfg = R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 2
+        x = -980.330085895
+        y = 133.666955517
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        cnfg = R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 2
+        x = 874.708945015
+        y = -412.219479559
+        z = 1.0
+        hx = 25.9852813742
+        hy = -27.8284271247
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        idlepc = 0x6062db80
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 3
+        f1/1 = SW1 3
+        slot2 = PA-2FE-TX
+        f2/0 = R3 f1/0
+        symbol = router
+        x = -443.933982822
+        y = -168.565583902
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/1
+        f1/1 = SW3 1
+        x = 251.449926937
+        y = -167.15137034
+        z = 1.0
+    [[ETHSW SW3]]
+        1 = access 1 R2 f1/1
+        2 = access 1 R8 f1/0
+        3 = access 1 R9 f1/0
+        4 = access 1 R10 f1/0
+        x = 515.257359313
+        y = -159.246824769
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10101
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        idlepc = 0x6062db80
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 1
+        x = -983.976838875
+        y = -523.533188058
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f2/0
+        f1/1 = R2 f1/0
+        symbol = optical_router
+        x = -62.9146468387
+        y = -168.565583902
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R4 f1/0
+        2 = access 1 R5 f1/0
+        3 = access 1 R1 f1/1
+        x = -728.93982567
+        y = -395.24891681
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10401
+    [[7200]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c7200-adventerprisek9-mz.152-4.M7.image
+        idlepc = 0x6062db80
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R9]]
+        console = 2109
+        aux = 2509
+        cnfg = R9.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 3
+        x = 868.642927837
+        y = -157.661038332
+        z = 1.0
+    [[ROUTER R10]]
+        console = 2110
+        aux = 2510
+        cnfg = R10.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 4
+        x = 845.60634791
+        y = 135.08116908
+        z = 1.0
+[GNS3-DATA]
+    configs = .
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "1.0.0.4"
+        x = -861.256059485
+        y = -491.089970519
+    [[NOTE 2]]
+        text = "1.0.0.5"
+        x = -890.954544294
+        y = -358.153895656
+    [[NOTE 3]]
+        text = "4.0.0.6"
+        x = -823.072293301
+        y = -18.7426406871
+    [[NOTE 4]]
+        text = "4.0.0.7"
+        x = -834.3860018
+        y = 136.820851174
+    [[NOTE 5]]
+        text = "2.0.0.8"
+        x = 667.50880144
+        y = -304.413780286
+    [[NOTE 6]]
+        text = "2.0.0.9"
+        x = 700.035713374
+        y = -168.649278299
+    [[NOTE 7]]
+        text = "2.0.0.10"
+        x = 705.692567624
+        y = -32.8847763108
+    [[NOTE 8]]
+        text = "23.0.0.0"
+        x = 82.0243866176
+        y = -188.448268172
+    [[NOTE 9]]
+        text = "2.0.0.0"
+        x = 349.310749906
+        y = -188.448268172
+    [[NOTE 10]]
+        text = "3.0.0.0"
+        x = -292.742207411
+        y = -194.105122421
+    [[NOTE 11]]
+        text = "1.0.0.0"
+        x = -550.129075763
+        y = -291.685858225
+    [[NOTE 12]]
+        text = "4.0.0.0"
+        x = -543.058007951
+        y = -25.813708499
+    [[NOTE 13]]
+        text = "A - 0-127\nB - 128-191\nC - 192-223"
+        x = -1088.94444303
+        y = 257.029003975
+    [[NOTE 14]]
+        text = "Objective at Edge of B-1 (R1) - --->OUT\n- Allow the Public of A to access the Public of B/C on weekdays from 9 am till 7pm and its reply should be also allowed, last 6 months..\n- Allow the Private of B to access the Private of A on daily basis from 7 am till 5 pm and its reply should be also allowed, last 6 months.\n- Allow the entire class C to access the private of B on weekends from 10 in the morning till 10 in the evening andits reply should also be allowed, Entire year.\n\n<------ IN\n- Only allow Public of A/B/C to access the Private of A on weekdays from 6 AM till 4 PM and also on weekdays from 11 AM till 11 PM for this entire year.\n\n\nObjective on Edge of B-2 (R2)\n- Only allow the Public of C to access the Entire Class A/B on weekdays from 8 am till 7pm for this whole year and it's reply should be also allowed.\n- No traffic should be allowed to come in."
+        x = -302.641702347
+        y = 295.21277016
+    [[NOTE 15]]
+        text = "10.3.3.0/24\n111.0.0.0/8\n18.0.0.0/8\n10.4.4.0/24\n"
+        x = 1035.20432766
+        y = -445.835136524
+    [[NOTE 16]]
+        text = "\n192.168.168.0/24\n200.1.1.0/24\n192.168.169.0/24\n197.1.1.0/24\n"
+        x = -1192.18203308
+        y = 100.051298552
+    [[NOTE 17]]
+        text = "\n198.167.18.0/24\n198.167.19.0/24\n198.167.172.0/24\n198.167.173.0/24"
+        x = 1008.33426997
+        y = 81.6665222414
+    [[NOTE 18]]
+        text = "\n190.1.0.0/16\n190.2.0.0/16\n172.18.0.0/16\n172.20.0.0/16\n"
+        x = 1023.89061916
+        y = -185.619841047
+    [[NOTE 19]]
+        text = "ISP"
+        x = -62.2253967444
+        y = -106.423881554
+    [[NOTE 20]]
+        text = "\n172.21.0.0/16\n172.22.0.0/16\n170.19.0.0/16\n189.11.0.0/16\n"
+        x = -1168.14040252
+        y = -327.041197284
+    [[NOTE 21]]
+        text = "10.1.1.0/24\n10.2.2.0/24\n11.0.0.0/8\n101.0.0.0/8\n"
+        x = -1146.92719909
+        y = -549.072726577
+    [[NOTE 22]]
+        text = "3"
+        x = 81.7825174817
+        y = -19.5100900462
+        interface = SW2 3
+    [[NOTE 23]]
+        text = "2"
+        x = -2.90843859618
+        y = 27.1710270165
+        interface = SW2 2
+    [[NOTE 24]]
+        text = "1"
+        x = -33.2017974219
+        y = -5.31242861712
+        interface = SW2 1
+    [[NOTE 25]]
+        text = "4"
+        x = 64.9951376062
+        y = 43.0191942439
+        interface = SW3 4
+    [[NOTE 26]]
+        text = "3"
+        x = 75.4906556735
+        y = 16.864556997
+        interface = SW3 3
+    [[NOTE 27]]
+        text = "2"
+        x = 68.3940551749
+        y = -6.75919889075
+        interface = SW3 2
+    [[NOTE 28]]
+        text = "1"
+        x = -24.2979669819
+        y = 18.5423672352
+        interface = SW3 1
+    [[NOTE 29]]
+        text = "3"
+        x = 70.6181626637
+        y = 20.2171355845
+        interface = SW1 3
+    [[NOTE 30]]
+        text = "2"
+        x = -1.24958347779
+        y = 31.7945596396
+        interface = SW1 2
+    [[NOTE 31]]
+        text = "1"
+        x = -28.9178620081
+        y = -6.81388251022
+        interface = SW1 1
+    [[NOTE 32]]
+        text = "f1/0"
+        x = -65.7916021625
+        y = -13.5044756182
+        interface = R10 f1/0
+    [[NOTE 33]]
+        text = "f1/0"
+        x = -50.8312761071
+        y = 32.449151502
+        interface = R9 f1/0
+    [[NOTE 34]]
+        text = "f1/0"
+        x = 0.105944825072
+        y = 44.7591988908
+        interface = R8 f1/0
+    [[NOTE 35]]
+        text = "f1/1"
+        x = 72.4966327227
+        y = 26.9809905173
+        interface = R3 f1/1
+    [[NOTE 36]]
+        text = "f1/0"
+        x = -49.9222292037
+        y = 28.3361167299
+        interface = R3 f1/0
+    [[NOTE 37]]
+        text = "f1/1"
+        x = 72.9989771087
+        y = 22.2860598896
+        interface = R2 f1/1
+    [[NOTE 38]]
+        text = "f1/0"
+        x = -46.5946124692
+        y = 31.0042908569
+        interface = R2 f1/0
+    [[NOTE 39]]
+        text = "f2/0"
+        x = 72.9958223325
+        y = 22.5780968325
+        interface = R1 f2/0
+    [[NOTE 40]]
+        text = "f1/1"
+        x = -72.8288407823
+        y = -14.7440475191
+        interface = R1 f1/1
+    [[NOTE 41]]
+        text = "f1/0"
+        x = 2.27383170437
+        y = 47.6105951096
+        interface = R1 f1/0
+    [[NOTE 42]]
+        text = "f1/0"
+        x = 71.4084385962
+        y = 10.8289729835
+        interface = R7 f1/0
+    [[NOTE 43]]
+        text = "f1/0"
+        x = 57.8611769884
+        y = 53.2119235537
+        interface = R6 f1/0
+    [[NOTE 44]]
+        text = "f1/0"
+        x = 69.7495834778
+        y = 6.2054403604
+        interface = R5 f1/0
+    [[NOTE 45]]
+        text = "f1/0"
+        x = 21.05032964
+        y = 47.642309635
+        interface = R4 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -1271.37799258
+        y = -605.283404696
+        width = 909.935208311
+        height = 845.699710299
+    [[SHAPE 2]]
+        type = rectangle
+        x = 453.962553522
+        y = -554.371716451
+        width = 726.087445203
+        height = 801.859089866

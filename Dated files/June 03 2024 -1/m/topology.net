@@ -1,0 +1,98 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3640]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot0 = NM-4T
+        s0/1 = R3 s0/1
+        x = -47.0
+        y = -309.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot0 = NM-4T
+        s0/2 = R2 s0/0
+        x = -698.0
+        y = -323.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot0 = NM-4T
+        s0/0 = R1 s0/2
+        s0/1 = R3 s0/0
+        slot1 = NM-4T
+        x = -487.0
+        y = -310.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot0 = NM-4T
+        s0/0 = R2 s0/1
+        s0/1 = R4 s0/1
+        slot1 = NM-4T
+        x = -265.0
+        y = -307.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "ip route  4.0.0.0  255.0.0.0  192.1.12.2"
+        x = -703.0
+        y = -192.5
+    [[NOTE 2]]
+        text = "4.0.0.4 / 192.1.12.1"
+        x = -698.0
+        y = -227.5
+    [[NOTE 3]]
+        text = "4.0.0.0/8"
+        x = 25.0
+        y = -262.5
+    [[NOTE 4]]
+        text = "s0/0"
+        x = -33.8920608074
+        y = 32.9365770109
+        interface = R3 s0/0
+    [[NOTE 5]]
+        text = "s0/1"
+        x = 72.8095643365
+        y = 18.1014634359
+        interface = R3 s0/1
+    [[NOTE 6]]
+        text = "s0/1"
+        x = 72.8920608074
+        y = 19.0634229891
+        interface = R2 s0/1
+    [[NOTE 7]]
+        text = "s0/0"
+        x = -45.9827022897
+        y = 27.176230255
+        interface = R2 s0/0
+    [[NOTE 8]]
+        text = "s0/2"
+        x = 72.9827022897
+        y = 20.823769745
+        interface = R1 s0/2
+    [[NOTE 9]]
+        text = "s0/1"
+        x = -10.8095643365
+        y = 34.8985365641
+        interface = R4 s0/1

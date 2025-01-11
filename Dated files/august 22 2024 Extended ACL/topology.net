@@ -1,0 +1,166 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        f0/0 = R3 f1/0
+        f0/1 = R6 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R5 f0/0
+        x = -573.256926037
+        y = -416.048773235
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        f0/0 = R3 f0/0
+        x = -939.256926037
+        y = -557.048773235
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        f0/0 = R3 f0/1
+        x = -967.256926037
+        y = -298.048773235
+        z = 1.0
+        hx = 14.5
+        hy = -34.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        f0/0 = R1 f0/0
+        f0/1 = R2 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R4 f0/0
+        x = -782.256926037
+        y = -412.048773235
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Emad\AppData\Local\Temp
+    udp = 10101
+    [[3725]]
+        image = D:\Emad\Apps\Cisco Packet Tracer 7.3.1\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x6148b534
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        cnfg = R5.cfg
+        f0/0 = R4 f1/0
+        x = -351.256926037
+        y = -555.048773235
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        cnfg = R6.cfg
+        f0/0 = R4 f0/1
+        x = -362.256926037
+        y = -301.048773235
+        z = 1.0
+        hx = 23.5
+        hy = -27.0
+[GNS3-DATA]
+    configs = .
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "\nR1(config-if)#ip access-group abc in\nR1(config-if)#do sh ip access-lists\n"
+        x = -441.23463146
+        y = 81.6665222413
+    [[NOTE 2]]
+        text = "\nR1(config)#ip access-list extended abc\nR1(config-ext-nacl)#permit ip any any\n"
+        x = -439.820417898
+        y = 170.761976671
+    [[NOTE 3]]
+        text = "R1(config)#ip access-list extended abc\nR1(config-ext-nacl)#$2.191.48.0 0.0.15.255 190.121.4.0 0.0.3.255 eq 23\nR1(config-ext-nacl)#deny tcp 197.134.152.16 0.0.0.7 190.121.4.0 0.0.3.255 eq 23\nR1(config-ext-nacl)#deny tcp 197.134.152.32 0.0.0.7 190.121.4.0 0.0.3.255 eq 23\nR1(config-ext-nacl)#deny tcp 192.168.11.128 0.0.0.31 190.121.4.0 0.0.3.255 eq $\nR1(config-ext-nacl)#\nR1(config-ext-nacl)#$72.191.16.0 0.0.15.255 190.121.8.0 0.0.3.255 echo\nR1(config-ext-nacl)#deny icmp 192.168.11.32 0.0.0.31 190.121.4.0 0.0.3.255 echo\nR1(config-ext-nacl)#deny icmp 192.168.11.64 0.0.0.31 190.121.4.0 0.0.3.255 echo\n"
+        x = -1281.27748751
+        y = 97.2228714274
+    [[NOTE 4]]
+        text = "R5#telnet 190.121.4.1 /source-inter loop4\n"
+        x = -275.771644663
+        y = -199.761976671
+    [[NOTE 5]]
+        text = "enable passsword abc\nusername em password abc\nline vty 0 4\nlogin local"
+        x = -1250.16478914
+        y = -196.933549546
+    [[NOTE 6]]
+        text = "user name : em\npassword: abc"
+        x = -937.623591853
+        y = -202.590403796
+    [[NOTE 7]]
+        text = "f0/1"
+        x = -3.80520908944
+        y = 37.6645007543
+        interface = R3 f0/1
+    [[NOTE 8]]
+        text = "f0/0"
+        x = -151.22966376
+        y = -96.3633440721
+        interface = R3 f0/0
+    [[NOTE 9]]
+        text = "f1/0"
+        x = 72.9930919905
+        y = 21.2566339779
+        interface = R3 f1/0
+    [[NOTE 10]]
+        text = "f0/0"
+        x = 69.8052090894
+        y = 6.33549924567
+        interface = R2 f0/0
+    [[NOTE 11]]
+        text = "f0/0"
+        x = 143.50715127
+        y = 98.2010059128
+        interface = R1 f0/0
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -69.6569347638
+        y = 12.9915917804
+        interface = R6 f0/0
+    [[NOTE 13]]
+        text = "f0/0"
+        x = -1.89819543965
+        y = 41.547786449
+        interface = R5 f0/0
+    [[NOTE 14]]
+        text = "f1/0"
+        x = 67.8981954396
+        y = 2.45221355099
+        interface = R4 f1/0
+    [[NOTE 15]]
+        text = "f0/1"
+        x = 69.6569347638
+        y = 38.0084082196
+        interface = R4 f0/1
+    [[NOTE 16]]
+        text = "f0/0"
+        x = -38.9930919905
+        y = 26.7433660221
+        interface = R4 f0/0
+    [[PIXMAP 1]]
+        path = D:\Emad\Documents\CCNA - CCNP\august 22 2024 lab.jpg
+        x = 145.200576851
+        y = -469.03953852
