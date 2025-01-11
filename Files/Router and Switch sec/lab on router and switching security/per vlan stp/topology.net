@@ -1,0 +1,38 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER sw1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        slot1 = NM-16ESW
+        f1/0 = sw2 f1/0
+        f1/1 = sw2 f1/1
+        f1/2 = sw2 f1/2
+        symbol = EtherSwitch router
+        x = -375.5
+        y = -223.5
+        z = 1.0
+    [[ROUTER sw2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        slot1 = NM-16ESW
+        f1/0 = sw1 f1/0
+        f1/1 = sw1 f1/1
+        f1/2 = sw1 f1/2
+        symbol = EtherSwitch router
+        x = -373.5
+        y = 38.5
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working

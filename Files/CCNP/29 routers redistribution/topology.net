@@ -1,0 +1,851 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        f1/1 = SW4 1
+        x = -539.28845533
+        y = -3.61522368915
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 2
+        x = -713.236723501
+        y = -236.960461481
+        z = 1.0
+    [[ETHSW SW4]]
+        1 = access 1 R5 f1/1
+        2 = access 1 R10 f1/0
+        3 = access 1 R11 f1/0
+        x = -563.001658765
+        y = 94.3086578651
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 3
+        f1/1 = SW3 1
+        x = -649.597113195
+        y = -10.686291501
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 2
+        x = -851.829652614
+        y = -147.865007051
+        z = 1.0
+    [[ETHSW SW3]]
+        1 = access 1 R7 f1/1
+        2 = access 1 R8 f1/0
+        3 = access 1 R9 f1/0
+        x = -773.719479559
+        y = -85.2964645563
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        f1/1 = R3 f1/0
+        slot2 = PA-2FE-TX
+        f2/0 = SW7 1
+        x = -262.0
+        y = -163.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        f1/1 = R3 f1/1
+        slot2 = PA-2FE-TX
+        f2/0 = SW1 1
+        x = -342.0
+        y = -94.0
+        z = 1.0
+    [[ETHSW SW7]]
+        1 = access 1 R1 f2/0
+        2 = access 1 R16 f1/0
+        3 = access 1 R17 f1/0
+        x = -157.122366364
+        y = -198.433549546
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R2 f2/0
+        2 = access 1 R4 f1/0
+        3 = access 1 R5 f1/0
+        x = -448.450360213
+        y = -71.1543289326
+        z = 1.0
+        hx = 1.4436508139
+        hy = -23.5857864376
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        f1/1 = SW2 1
+        x = -515.828427125
+        y = -161.39696962
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/1
+        f1/1 = R2 f1/1
+        slot2 = PA-2FE-TX
+        f2/0 = SW9 1
+        x = -176.242640687
+        y = -86.2010101268
+        z = 1.0
+    [[ETHSW SW9]]
+        1 = access 1 R3 f2/0
+        2 = access 1 R20 f1/0
+        3 = access 1 R21 f1/0
+        x = -145.808657865
+        y = 15.1126983722
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R4 f1/1
+        2 = access 1 R6 f1/0
+        3 = access 1 R7 f1/0
+        x = -625.22705551
+        y = -164.492424049
+        z = 1.0
+[127.0.0.1:7206]
+    workingdir = working
+    udp = 10601
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R14]]
+        console = 2114
+        aux = 2514
+        cnfg = configs\R14.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW6 2
+        x = -652.425540319
+        y = 444.690475583
+        z = 1.0
+    [[ROUTER R13]]
+        console = 2113
+        aux = 2513
+        cnfg = configs\R13.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW5 2
+        f1/1 = SW6 1
+        x = -561.915872328
+        y = 311.75440072
+        z = 1.0
+    [[ETHSW SW6]]
+        1 = access 1 R13 f1/1
+        2 = access 1 R14 f1/0
+        3 = access 1 R15 f1/0
+        x = -564.415872328
+        y = 379.979797464
+        z = 1.0
+[127.0.0.1:7207]
+    workingdir = working
+    udp = 10701
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R16]]
+        console = 2116
+        aux = 2516
+        cnfg = configs\R16.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW7 2
+        x = -24.5147186258
+        y = -287.872149726
+        z = 1.0
+    [[ROUTER R15]]
+        console = 2115
+        aux = 2515
+        cnfg = configs\R15.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW6 3
+        x = -471.406204336
+        y = 451.761543395
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = working
+    udp = 10401
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R10]]
+        console = 2110
+        aux = 2510
+        cnfg = configs\R10.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 2
+        f1/1 = SW5 1
+        x = -662.325035256
+        y = 157.605122421
+        z = 1.0
+    [[ROUTER R9]]
+        console = 2109
+        aux = 2509
+        cnfg = configs\R9.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 3
+        x = -843.34437124
+        y = -17.7573593129
+        z = 1.0
+    [[ETHSW SW5]]
+        1 = access 1 R10 f1/1
+        2 = access 1 R13 f1/0
+        3 = access 1 R12 f1/0
+        x = -673.31031663
+        y = 241.386868352
+        z = 1.0
+[127.0.0.1:7205]
+    workingdir = working
+    udp = 10501
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        console = 2112
+        aux = 2512
+        cnfg = configs\R12.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW5 3
+        x = -793.846896557
+        y = 310.340187158
+        z = 1.0
+    [[ROUTER R11]]
+        console = 2111
+        aux = 2511
+        cnfg = configs\R11.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 3
+        x = -484.134126397
+        y = 154.776695297
+        z = 1.0
+[127.0.0.1:7208]
+    workingdir = working
+    udp = 10801
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R17]]
+        console = 2117
+        aux = 2517
+        cnfg = configs\R17.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW7 3
+        f1/1 = SW8 1
+        x = -25.9289321881
+        y = -180.391918986
+        z = 1.0
+    [[ROUTER R18]]
+        console = 2118
+        aux = 2518
+        cnfg = configs\R18.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW8 2
+        x = 251.256926037
+        y = -236.960461481
+        z = 1.0
+    [[ETHSW SW8]]
+        1 = access 1 R17 f1/1
+        2 = access 1 R18 f1/0
+        3 = access 1 R19 f1/0
+        x = 135.619841047
+        y = -171.563491861
+        z = 1.0
+[127.0.0.1:7209]
+    workingdir = working
+    udp = 10901
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R19]]
+        console = 2119
+        aux = 2519
+        cnfg = configs\R19.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW8 3
+        x = 265.399061661
+        y = -116.752308679
+        z = 1.0
+    [[ROUTER R20]]
+        console = 2120
+        aux = 2520
+        cnfg = configs\R20.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW9 2
+        x = -198.462986798
+        y = 109.521861301
+        z = 1.0
+[127.0.0.1:7213]
+    workingdir = working
+    udp = 11301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ETHSW SW13]]
+        1 = access 1 R27 f1/1
+        2 = access 1 R28 f1/0
+        3 = access 1 R29 f1/0
+        x = 378.864573775
+        y = 343.203102168
+        z = 1.0
+        hx = 5.92893218813
+        hy = -46.2132034356
+    [[ROUTER R27]]
+        console = 2127
+        aux = 2527
+        cnfg = configs\R27.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW12 3
+        f1/1 = SW13 1
+        x = 232.168614282
+        y = 341.45288553
+        z = 1.0
+    [[ROUTER R28]]
+        console = 2128
+        aux = 2528
+        cnfg = configs\R28.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW13 2
+        x = 440.050865276
+        y = 293.369624409
+        z = 1.0
+[127.0.0.1:7212]
+    workingdir = working
+    udp = 11201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R25]]
+        console = 2125
+        aux = 2525
+        cnfg = configs\R25.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW11 2
+        x = -42.7428771583
+        y = 404.717324935
+        z = 1.0
+    [[ROUTER R26]]
+        console = 2126
+        aux = 2526
+        cnfg = configs\R26.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW12 2
+        x = 265.061203015
+        y = 162.819666663
+        z = 1.0
+[127.0.0.1:7210]
+    workingdir = working
+    udp = 11001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ETHSW SW11]]
+        1 = access 1 R22 f1/1
+        2 = access 1 R25 f1/0
+        3 = access 1 R24 f1/0
+        x = -135.909162928
+        y = 364.430590953
+        z = 1.0
+    [[ETHSW SW10]]
+        1 = access 1 R21 f1/1
+        2 = access 1 R23 f1/0
+        3 = access 1 R22 f1/0
+        x = -1.55173182811
+        y = 245.629509039
+        z = 1.0
+        hx = -1.14213562373
+        hy = -22.1715728753
+    [[ROUTER R22]]
+        console = 2122
+        aux = 2522
+        cnfg = configs\R22.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW10 3
+        f1/1 = SW11 1
+        x = -106.176623509
+        y = 256.600071787
+        z = 1.0
+    [[ROUTER R21]]
+        console = 2121
+        aux = 2521
+        cnfg = configs\R21.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW9 3
+        f1/1 = SW10 1
+        x = -45.7279220614
+        y = 118.007142675
+        z = 1.0
+[127.0.0.1:7211]
+    workingdir = working
+    udp = 11101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ETHSW SW12]]
+        1 = access 1 R23 f1/1
+        2 = access 1 R26 f1/0
+        3 = access 1 R27 f1/0
+        x = 179.453318806
+        y = 252.700576851
+        z = 1.0
+        hx = 7.34314575051
+        hy = 40.0538238692
+    [[ROUTER R23]]
+        console = 2123
+        aux = 2523
+        cnfg = configs\R23.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW10 2
+        f1/1 = SW12 1
+        x = 82.6276534692
+        y = 268.356090295
+        z = 1.0
+    [[ROUTER R24]]
+        console = 2124
+        aux = 2524
+        cnfg = configs\R24.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW11 3
+        x = -195.477941895
+        y = 398.396598927
+        z = 1.0
+[127.0.0.1:7214]
+    workingdir = working
+    udp = 11401
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R29]]
+        console = 2129
+        aux = 2529
+        cnfg = configs\R29.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW13 3
+        x = 454.903679019
+        y = 422.063058585
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "3"
+        x = 64.7096694175
+        y = 43.3275540897
+        interface = SW13 3
+    [[NOTE 2]]
+        text = "1"
+        x = -4.48378244895
+        y = 17.1389210136
+        interface = SW13 1
+    [[NOTE 3]]
+        text = "3"
+        x = 54.2307471737
+        y = 51.3434450827
+        interface = SW12 3
+    [[NOTE 4]]
+        text = "2"
+        x = 63.6530358009
+        y = -12.4149005839
+        interface = SW12 2
+    [[NOTE 5]]
+        text = "1"
+        x = -3.58190355175
+        y = 24.5208458953
+        interface = SW12 1
+    [[NOTE 6]]
+        text = "2"
+        x = 71.1259521398
+        y = 34.1876753362
+        interface = SW11 2
+    [[NOTE 7]]
+        text = "1"
+        x = 45.8340431783
+        y = -22.642043833
+        interface = SW11 1
+    [[NOTE 8]]
+        text = "1"
+        x = 20.5465432395
+        y = -21.0997861303
+        interface = SW10 1
+    [[NOTE 9]]
+        text = "3"
+        x = -0.354845158857
+        y = 33.7321763649
+        interface = SW10 3
+    [[NOTE 10]]
+        text = "2"
+        x = 68.9853513196
+        y = 37.8799279478
+        interface = SW10 2
+    [[NOTE 11]]
+        text = "f1/0"
+        x = 3.79033058254
+        y = -5.32755408965
+        interface = R29 f1/0
+    [[NOTE 12]]
+        text = "f1/1"
+        x = 72.9837824489
+        y = 20.8610789864
+        interface = R27 f1/1
+    [[NOTE 13]]
+        text = "f1/0"
+        x = 14.2692528263
+        y = -13.3434450827
+        interface = R27 f1/0
+    [[NOTE 14]]
+        text = "f1/0"
+        x = 4.84696419906
+        y = 50.4149005839
+        interface = R26 f1/0
+    [[NOTE 15]]
+        text = "f1/0"
+        x = -2.62595213978
+        y = 3.81232466382
+        interface = R25 f1/0
+    [[NOTE 16]]
+        text = "f1/1"
+        x = 72.0819035518
+        y = 13.4791541047
+        interface = R23 f1/1
+    [[NOTE 17]]
+        text = "f1/0"
+        x = -0.485351319624
+        y = 0.120072052191
+        interface = R23 f1/0
+    [[NOTE 18]]
+        text = "f1/1"
+        x = 22.6659568217
+        y = 60.642043833
+        interface = R22 f1/1
+    [[NOTE 19]]
+        text = "f1/0"
+        x = 68.8548451589
+        y = 4.26782363514
+        interface = R22 f1/0
+    [[NOTE 20]]
+        text = "f1/1"
+        x = 47.9534567605
+        y = 59.0997861303
+        interface = R21 f1/1
+    [[NOTE 21]]
+        text = "f1/0"
+        x = 6.30559596591
+        y = -7.78940740036
+        interface = R21 f1/0
+    [[NOTE 22]]
+        text = "f1/0"
+        x = 52.2577917194
+        y = -13.0590567199
+        interface = R20 f1/0
+    [[NOTE 23]]
+        text = "3"
+        x = 62.1944040341
+        y = 45.7894074004
+        interface = SW9 3
+    [[NOTE 24]]
+        text = "2"
+        x = 16.2422082806
+        y = 51.0590567199
+        interface = SW9 2
+    [[NOTE 25]]
+        text = "1"
+        x = 22.4365573443
+        y = -21.8066986919
+        interface = SW9 1
+    [[NOTE 26]]
+        text = "f1/0"
+        x = -3.09215263401
+        y = 4.7559715193
+        interface = R19 f1/0
+    [[NOTE 27]]
+        text = "3"
+        x = 71.592152634
+        y = 33.2440284807
+        interface = SW8 3
+    [[NOTE 28]]
+        text = "2"
+        x = 70.9159161135
+        y = -2.5933559596
+        interface = SW8 2
+    [[NOTE 29]]
+        text = "1"
+        x = -4.49405602196
+        y = 15.31044731
+        interface = SW8 1
+    [[NOTE 30]]
+        text = "f1/0"
+        x = -2.41591611352
+        y = 40.5933559596
+        interface = R18 f1/0
+    [[NOTE 31]]
+        text = "f1/1"
+        x = 72.994056022
+        y = 22.68955269
+        interface = R17 f1/1
+    [[NOTE 32]]
+        text = "f1/0"
+        x = -6.31977035441
+        y = 14.6545483953
+        interface = R17 f1/0
+    [[NOTE 33]]
+        text = "f1/0"
+        x = -0.670901294328
+        y = 43.5932953953
+        interface = R16 f1/0
+    [[NOTE 34]]
+        text = "3"
+        x = 74.8197703544
+        y = 23.3454516047
+        interface = SW7 3
+    [[NOTE 35]]
+        text = "2"
+        x = 69.1709012943
+        y = -5.59329539528
+        interface = SW7 2
+    [[NOTE 36]]
+        text = "1"
+        x = -1.81814500417
+        y = 30.3998629663
+        interface = SW7 1
+    [[NOTE 37]]
+        text = "f1/0"
+        x = 2.66322067605
+        y = -4.07066973152
+        interface = R15 f1/0
+    [[NOTE 38]]
+        text = "f1/0"
+        x = 64.520974949
+        y = -2.62576167889
+        interface = R14 f1/0
+    [[NOTE 39]]
+        text = "f1/0"
+        x = 0.250716870351
+        y = -0.967029727287
+        interface = R13 f1/0
+    [[NOTE 40]]
+        text = "f1/0"
+        x = 67.1603577898
+        y = 1.18966709359
+        interface = R12 f1/0
+    [[NOTE 41]]
+        text = "3"
+        x = 65.8367793239
+        y = 42.0706697315
+        interface = SW6 3
+    [[NOTE 42]]
+        text = "2"
+        x = 3.97902505102
+        y = 40.6257616789
+        interface = SW6 2
+    [[NOTE 43]]
+        text = "3"
+        x = 1.33964221024
+        y = 36.8103329064
+        interface = SW5 3
+    [[NOTE 44]]
+        text = "2"
+        x = 68.2492831296
+        y = 38.9670297273
+        interface = SW5 2
+    [[NOTE 45]]
+        text = "f1/0"
+        x = 2.82781122275
+        y = -4.26097912094
+        interface = R11 f1/0
+    [[NOTE 46]]
+        text = "f1/0"
+        x = 66.0685151984
+        y = -0.504961732268
+        interface = R10 f1/0
+    [[NOTE 47]]
+        text = "3"
+        x = 65.6721887772
+        y = 42.2609791209
+        interface = SW4 3
+    [[NOTE 48]]
+        text = "2"
+        x = 2.43148480156
+        y = 38.5049617323
+        interface = SW4 2
+    [[NOTE 49]]
+        text = "f1/0"
+        x = 61.0083466757
+        y = -6.55752994385
+        interface = R9 f1/0
+    [[NOTE 50]]
+        text = "1"
+        x = 74.5267365729
+        y = 24.7700531624
+        interface = SW3 1
+    [[NOTE 51]]
+        text = "3"
+        x = 7.4916533243
+        y = 44.5575299438
+        interface = SW3 3
+    [[NOTE 52]]
+        text = "f1/1"
+        x = -55.5242112559
+        y = 17.4725875247
+        interface = R7 f1/1
+    [[NOTE 53]]
+        text = "f1/0"
+        x = 41.240419242
+        y = -17.1419913995
+        interface = R7 f1/0
+    [[NOTE 54]]
+        text = "f1/0"
+        x = 66.8755995541
+        y = 43.2707253014
+        interface = R6 f1/0
+    [[NOTE 55]]
+        text = "3"
+        x = 27.259580758
+        y = 55.1419913995
+        interface = SW2 3
+    [[NOTE 56]]
+        text = "1"
+        x = 75.3597091235
+        y = 19.347176211
+        interface = SW2 1
+    [[NOTE 57]]
+        text = "2"
+        x = 1.62440044588
+        y = -5.27072530143
+        interface = SW2 2
+    [[NOTE 58]]
+        text = "3"
+        x = 4.0803331109
+        y = 40.7548890641
+        interface = SW1 3
+    [[NOTE 59]]
+        text = "2"
+        x = 5.99888038005
+        y = -11.0126626079
+        interface = SW1 2
+    [[NOTE 60]]
+        text = "1"
+        x = 74.9848877413
+        y = 9.60127824798
+        interface = SW1 1
+    [[NOTE 61]]
+        text = "f1/0"
+        x = 64.4196668891
+        y = -2.75488906414
+        interface = R5 f1/0
+    [[NOTE 62]]
+        text = "f1/1"
+        x = -19.5876311849
+        y = 22.8954644762
+        interface = R4 f1/1
+    [[NOTE 63]]
+        text = "f1/0"
+        x = 62.50111962
+        y = 49.0126626079
+        interface = R4 f1/0
+    [[NOTE 64]]
+        text = "f2/0"
+        x = 46.0634426557
+        y = 59.8066986919
+        interface = R3 f2/0
+    [[NOTE 65]]
+        text = "f1/1"
+        x = -6.95579812097
+        y = 20.1200541188
+        interface = R3 f1/1
+    [[NOTE 66]]
+        text = "f1/0"
+        x = 3.20221605233
+        y = -4.68505334093
+        interface = R3 f1/0
+    [[NOTE 67]]
+        text = "f2/0"
+        x = -6.48488774126
+        y = 28.398721752
+        interface = R2 f2/0
+    [[NOTE 68]]
+        text = "f1/1"
+        x = 72.955798121
+        y = 23.8799458812
+        interface = R2 f1/1
+    [[NOTE 69]]
+        text = "f1/0"
+        x = 63.2899407807
+        y = -4.12507392336
+        interface = R2 f1/0
+    [[NOTE 70]]
+        text = "f2/0"
+        x = 70.3181450042
+        y = 7.60013703372
+        interface = R1 f2/0
+    [[NOTE 71]]
+        text = "f1/1"
+        x = 62.7977839477
+        y = 48.6850533409
+        interface = R1 f1/1
+    [[NOTE 72]]
+        text = "f1/0"
+        x = 2.71005921929
+        y = 48.1250739234
+        interface = R1 f1/0

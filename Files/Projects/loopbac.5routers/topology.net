@@ -1,0 +1,109 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = R5 f0/0
+        f0/1 = R3 f0/0
+        cnfg = configs\R4.cfg
+        x = -63.0
+        y = -167.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        cnfg = configs\R1.cfg
+        x = -554.0
+        y = -170.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/1
+        cnfg = configs\R2.cfg
+        x = -393.0
+        y = -171.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R4 f0/1
+        f0/1 = R2 f0/1
+        cnfg = configs\R3.cfg
+        x = -235.0
+        y = -169.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        f0/0 = R4 f0/0
+        cnfg = configs\R5.cfg
+        x = 107.0
+        y = -165.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f0/0"
+        x = -6.97576521716
+        y = 20.6078091715
+        interface = R5 f0/0
+    [[NOTE 2]]
+        text = "f0/1"
+        x = -27.9946844246
+        y = 25.3479127539
+        interface = R4 f0/1
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 72.9757652172
+        y = 23.3921908285
+        interface = R4 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 72.9946844246
+        y = 22.6520872461
+        interface = R3 f0/0
+    [[NOTE 5]]
+        text = "f0/1"
+        x = -22.9807245625
+        y = 24.7583625912
+        interface = R3 f0/1
+    [[NOTE 6]]
+        text = "f0/1"
+        x = 72.9807245625
+        y = 23.2416374088
+        interface = R2 f0/1
+    [[NOTE 7]]
+        text = "f0/0"
+        x = -36.9936239738
+        y = 30.2858281433
+        interface = R2 f0/0
+    [[NOTE 8]]
+        text = "f0/0"
+        x = 72.9936239738
+        y = 22.7141718567
+        interface = R1 f0/0

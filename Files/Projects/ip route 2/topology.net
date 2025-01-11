@@ -1,0 +1,146 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_dmrrrj\working
+    udp = 10001
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        slot0 = NM-4E
+        e0/2 = R2 e0/2
+        e0/3 = R5 e0/3
+        cnfg = configs\R4.cfg
+        x = -269.0
+        y = 5.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        slot0 = NM-4E
+        e0/0 = R2 e0/0
+        cnfg = configs\R1.cfg
+        x = -562.0
+        y = -125.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        slot0 = NM-4E
+        e0/0 = R1 e0/0
+        e0/1 = R3 e0/1
+        e0/2 = R4 e0/2
+        cnfg = configs\R2.cfg
+        x = -412.0
+        y = -121.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        slot0 = NM-4E
+        e0/0 = R5 e0/0
+        e0/1 = R2 e0/1
+        cnfg = configs\R3.cfg
+        x = -292.0
+        y = -225.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_dmrrrj\working
+    udp = 10101
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2105
+        aux = 2505
+        slot0 = NM-4E
+        e0/0 = R3 e0/0
+        e0/1 = R6 e0/1
+        e0/3 = R4 e0/3
+        cnfg = configs\R5.cfg
+        x = -184.0
+        y = -107.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2106
+        aux = 2506
+        slot0 = NM-4E
+        e0/1 = R5 e0/1
+        cnfg = configs\R6.cfg
+        x = 68.0
+        y = -107.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "e0/1"
+        x = -7.0
+        y = 22.0
+        interface = R6 e0/1
+    [[NOTE 2]]
+        text = "e0/1"
+        x = 73.0
+        y = 22.0
+        interface = R5 e0/1
+    [[NOTE 3]]
+        text = "e0/0"
+        x = 5.9936696494
+        y = -7.50691649417
+        interface = R5 e0/0
+    [[NOTE 4]]
+        text = "e0/3"
+        x = 8.81831462381
+        y = 53.8629266133
+        interface = R5 e0/3
+    [[NOTE 5]]
+        text = "e0/3"
+        x = 57.1816853762
+        y = -9.86292661334
+        interface = R4 e0/3
+    [[NOTE 6]]
+        text = "e0/2"
+        x = 2.98811889317
+        y = -4.44403510112
+        interface = R4 e0/2
+    [[NOTE 7]]
+        text = "e0/0"
+        x = 60.0063303506
+        y = 51.5069164942
+        interface = R3 e0/0
+    [[NOTE 8]]
+        text = "e0/1"
+        x = 2.77243668841
+        y = 48.1972215367
+        interface = R3 e0/1
+    [[NOTE 9]]
+        text = "e0/2"
+        x = 63.0118811068
+        y = 48.4440351011
+        interface = R2 e0/2
+    [[NOTE 10]]
+        text = "e0/1"
+        x = 63.2275633116
+        y = -4.19722153671
+        interface = R2 e0/1
+    [[NOTE 11]]
+        text = "e0/0"
+        x = -6.98578535847
+        y = 20.9337123904
+        interface = R2 e0/0
+    [[NOTE 12]]
+        text = "e0/0"
+        x = 72.9857853585
+        y = 23.0662876096
+        interface = R1 e0/0

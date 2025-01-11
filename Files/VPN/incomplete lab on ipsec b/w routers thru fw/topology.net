@@ -1,0 +1,133 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = C:\eve\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R1 f1/0
+        e1 = R4 f2/0
+        x = -396.0
+        y = -148.0
+        z = 1.0
+    [[PIX PIX2]]
+        e0 = R2 f1/0
+        e1 = R4 f1/1
+        x = -25.0
+        y = -151.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e0
+        x = -580.0
+        y = -146.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX2 e0
+        x = 180.0
+        y = -146.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/0
+        f1/1 = PIX2 e1
+        slot2 = PA-2FE-TX
+        f2/0 = PIX1 e1
+        x = -236.0
+        y = -152.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R4 f1/0
+        x = 30.0
+        y = 51.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f2/0"
+        x = -6.98750585632
+        y = 22.9996876464
+        interface = R4 f2/0
+    [[NOTE 2]]
+        text = "f1/1"
+        x = 72.9995507814
+        y = 22.1895713307
+        interface = R4 f1/1
+    [[NOTE 3]]
+        text = "f1/0"
+        x = 64.7980498418
+        y = 46.266932774
+        interface = R4 f1/0
+    [[NOTE 4]]
+        text = "e1"
+        x = -6.99955078136
+        y = 21.8104286693
+        interface = PIX2 e1
+    [[NOTE 5]]
+        text = "e0"
+        x = 72.9881076257
+        y = 22.9753196982
+        interface = PIX2 e0
+    [[NOTE 6]]
+        text = "e1"
+        x = 72.9875058563
+        y = 21.0003123536
+        interface = PIX1 e1
+    [[NOTE 7]]
+        text = "e0"
+        x = -6.9976372604
+        y = 22.4347569267
+        interface = PIX1 e0
+    [[NOTE 8]]
+        text = "f1/0"
+        x = 1.2019501582
+        y = -2.26693277401
+        interface = R3 f1/0
+    [[NOTE 9]]
+        text = "f1/0"
+        x = -6.98810762572
+        y = 21.0246803018
+        interface = R2 f1/0
+    [[NOTE 10]]
+        text = "f1/0"
+        x = 72.9976372604
+        y = 21.5652430733
+        interface = R1 f1/0

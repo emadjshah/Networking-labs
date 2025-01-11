@@ -1,0 +1,213 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = C:\eve\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R8 f0/0
+        e1 = R7 f0/0
+        x = -230.989898732
+        y = -5.02943725152
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\eve\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60264a2c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/4
+        x = -357.453752082
+        y = -238.658946291
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/5
+        x = -612.590837072
+        y = -252.124891681
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/0
+        x = -765.340187158
+        y = 201.837661841
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/1
+        x = -604.632467632
+        y = 198.426406871
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\eve\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60264a2c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/3
+        x = -131.0
+        y = 192.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R8 s0/2
+        x = -448.42431483
+        y = 205.303607231
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        f0/0 = PIX1 e1
+        x = 175.450793489
+        y = -8.04163056034
+        z = 1.0
+    [[ROUTER R8]]
+        model = 3725
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        wic0/0 = WIC-2T
+        wic0/1 = WIC-2T
+        wic0/2 = WIC-2T
+        s0/0 = R2 s0/0
+        s0/1 = R3 s0/0
+        s0/2 = R6 s0/0
+        s0/3 = R5 s0/0
+        s0/4 = R4 s0/0
+        s0/5 = R1 s0/0
+        f0/0 = PIX1 e0
+        slot1 = NM-4T
+        slot2 = NM-4T
+        x = -487.173664916
+        y = -10.5958877054
+        z = 1.0
+        hx = 23.6471862576
+        hy = -30.8994949366
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "e1"
+        x = 72.9989015421
+        y = 21.7035621042
+        interface = PIX1 e1
+    [[NOTE 2]]
+        text = "e0"
+        x = -6.99056091857
+        y = 21.1310711085
+        interface = PIX1 e0
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 72.9905609186
+        y = 22.8689288915
+        interface = R8 f0/0
+    [[NOTE 4]]
+        text = "s0/5"
+        x = -27.543784904
+        y = -16.320100192
+        interface = R8 s0/5
+    [[NOTE 5]]
+        text = "s0/4"
+        x = 50.1276544438
+        y = -14.1475234733
+        interface = R8 s0/4
+    [[NOTE 6]]
+        text = "s0/3"
+        x = 68.6990761581
+        y = 40.0437236029
+        interface = R8 s0/3
+    [[NOTE 7]]
+        text = "s0/2"
+        x = 43.4972954147
+        y = 60.5980153502
+        interface = R8 s0/2
+    [[NOTE 8]]
+        text = "s0/1"
+        x = 16.2938489207
+        y = 58.3442501108
+        interface = R8 s0/1
+    [[NOTE 9]]
+        text = "s0/0"
+        x = 2.64699619712
+        y = 48.0517784449
+        interface = R8 s0/0
+    [[NOTE 10]]
+        text = "f0/0"
+        x = -6.99890154209
+        y = 22.2964378958
+        interface = R7 f0/0
+    [[NOTE 11]]
+        text = "s0/0"
+        x = 22.5027045853
+        y = -16.5980153502
+        interface = R6 s0/0
+    [[NOTE 12]]
+        text = "s0/0"
+        x = 31.2420493389
+        y = 12.4415577713
+        interface = R5 s0/0
+    [[NOTE 13]]
+        text = "s0/0"
+        x = 15.8723455562
+        y = 58.1475234733
+        interface = R4 s0/0
+    [[NOTE 14]]
+        text = "s0/0"
+        x = 49.7061510793
+        y = -14.3442501108
+        interface = R3 s0/0
+    [[NOTE 15]]
+        text = "s0/0"
+        x = 63.3530038029
+        y = -4.0517784449
+        interface = R2 s0/0
+    [[NOTE 16]]
+        text = "s0/0"
+        x = 53.9458051575
+        y = 56.0774595048
+        interface = R1 s0/0

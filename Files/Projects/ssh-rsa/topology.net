@@ -1,0 +1,41 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        cnfg = configs\R1.cfg
+        x = -391.0
+        y = -110.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        cnfg = configs\R2.cfg
+        x = -155.0
+        y = -111.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f0/0"
+        x = -33.9983011977
+        y = 21.6313520627
+        interface = R2 f0/0
+    [[NOTE 2]]
+        text = "f0/0"
+        x = 72.9983011977
+        y = 22.3686479373
+        interface = R1 f0/0

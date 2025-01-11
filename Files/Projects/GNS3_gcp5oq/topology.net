@@ -1,0 +1,49 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_gcp5oq\working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60bec7a8
+        sparsemem = True
+        ghostios = True
+    [[ROUTER SW1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        slot1 = NM-16ESW
+        f1/1 = SW2 f1/1
+        cnfg = configs\SW1.cfg
+        symbol = EtherSwitch router
+        x = -432.5
+        y = -183.5
+        z = 1.0
+    [[ROUTER SW2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        slot1 = NM-16ESW
+        f1/1 = SW1 f1/1
+        cnfg = configs\SW2.cfg
+        symbol = EtherSwitch router
+        x = -44.5
+        y = -180.5
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "sh int trunk"
+        x = -342.0
+        y = -107.0
+    [[NOTE 2]]
+        text = "f1/1"
+        x = -46.4988043899
+        y = 23.1907308939
+        interface = SW2 f1/1
+    [[NOTE 3]]
+        text = "f1/1"
+        x = 65.4988043899
+        y = 23.8092691061
+        interface = SW1 f1/1

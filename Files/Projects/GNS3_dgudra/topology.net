@@ -1,0 +1,60 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_dgudra\working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        cnfg = configs\R1.cfg
+        x = -445.0
+        y = -149.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/1
+        cnfg = configs\R2.cfg
+        x = -268.0
+        y = -151.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/1 = R2 f0/1
+        cnfg = configs\R3.cfg
+        x = -95.0
+        y = -148.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "f0/1"
+        x = -6.99398712239
+        y = 21.3064626511
+        interface = R3 f0/1
+    [[NOTE 2]]
+        text = "f0/1"
+        x = 72.9939871224
+        y = 22.6935373489
+        interface = R2 f0/1
+    [[NOTE 3]]
+        text = "f0/0"
+        x = -6.99744669986
+        y = 22.4519485503
+        interface = R2 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 72.9974466999
+        y = 21.5480514497
+        interface = R1 f0/0

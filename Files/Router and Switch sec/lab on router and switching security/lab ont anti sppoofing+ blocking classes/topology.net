@@ -1,0 +1,141 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df838
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f2/0
+        x = -479.580735804
+        y = -130.899494937
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f2/1
+        x = -482.409162928
+        y = -19.3431457505
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df838
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/1
+        x = 350.936074863
+        y = -239.485281374
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f2/0
+        x = 353.379725677
+        y = -32.686291501
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df838
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/0
+        f1/1 = R4 f1/0
+        slot2 = PA-2FE-TX
+        f2/0 = R5 f1/0
+        f2/1 = R6 f1/0
+        x = -225.100505063
+        y = -134.585786438
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/1
+        f1/1 = R7 f1/0
+        slot2 = PA-2FE-TX
+        f2/0 = R8 f1/0
+        x = 136.071067812
+        y = -133.828427125
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df838
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/1
+        x = -481.267027305
+        y = -225.727922061
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        f1/1 = R2 f1/0
+        x = -35.0
+        y = -136.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "SITE B"
+        x = 227.688383542
+        y = -321.913780286
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "SITE A"
+        x = -374.766594029
+        y = -321.71277016
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[SHAPE 1]]
+        type = rectangle
+        x = -478.004184082
+        y = -219.203102168
+        width = 318.198051534
+        height = 236.173664916
+    [[SHAPE 2]]
+        type = rectangle
+        x = 135.764501988
+        y = -231.931024229
+        width = 274.953318806
+        height = 240.416305603

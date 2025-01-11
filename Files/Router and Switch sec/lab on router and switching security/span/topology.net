@@ -1,0 +1,84 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_ijtm2b\working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60bec7a8
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R3 f1/0
+        cnfg = configs\R1.cfg
+        x = -495.0
+        y = -264.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R3 f1/1
+        cnfg = configs\R2.cfg
+        x = -324.0
+        y = -270.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        slot1 = NM-16ESW
+        f1/0 = R1 f0/0
+        f1/1 = R2 f0/0
+        f1/10 = nio_gen_eth:\device\npf_{9300d7db-dd11-45cb-a3bb-9f1de5323f12}
+        cnfg = configs\R3.cfg
+        symbol = EtherSwitch router
+        x = -387.5
+        y = -117.5
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "ARP\nwho is 10.0.0.2\ngive me ur "
+        x = -587.0
+        y = -210.0
+    [[NOTE 2]]
+        text = "nio_gen_eth:\device\npf_{9300d7db-dd11-45cb-a3bb-9f1de5323f12}"
+        x = 40.6885708959
+        y = 393.664864715
+        interface = C1 nio_gen_eth:\device\npf_{9300d7db-dd11-45cb-a3bb-9f1de5323f12}
+    [[Cloud C1]]
+        symbol = computer
+        x = -552.5
+        y = -23.0
+        z = 1.0
+        connections = R3:f1/10:nio_gen_eth:\device\npf_{9300d7db-dd11-45cb-a3bb-9f1de5323f12}
+    [[NOTE 3]]
+        text = "f1/1"
+        x = 50.3374843351
+        y = -12.7835930038
+        interface = R3 f1/1
+    [[NOTE 4]]
+        text = "f1/0"
+        x = -42.8942964511
+        y = -8.64355874766
+        interface = R3 f1/0
+    [[NOTE 5]]
+        text = "f1/10"
+        x = -10.2508567167
+        y = 44.968108228
+        interface = R3 f1/10
+    [[NOTE 6]]
+        text = "f0/0"
+        x = 16.1625156649
+        y = 58.2835930038
+        interface = R2 f0/0
+    [[NOTE 7]]
+        text = "f0/0"
+        x = 55.3942964511
+        y = 55.1435587477
+        interface = R1 f0/0

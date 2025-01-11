@@ -1,0 +1,102 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_n28s9d\working
+    udp = 10001
+    [[3725]]
+        image = C:\eve\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60264a2c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = R1 f0/0
+        f0/1 = R2 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R3 f0/0
+        cnfg = configs\R4.cfg
+        x = -505.0
+        y = -60.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R4 f0/0
+        cnfg = configs\R1.cfg
+        x = -505.0
+        y = 191.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R4 f0/1
+        cnfg = configs\R2.cfg
+        x = -508.0
+        y = -274.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R4 f1/0
+        cnfg = configs\R3.cfg
+        x = -202.0
+        y = -61.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "ZBF\nThree Step Process\n1) Create Three zones\n      # Zone Security Local\n      # Zone Security Internet\n      # Zone Security Dmz\n\n2) Apply the Zones to there interfaces\n      # int f0/1\n              Zone-member security Internet\n      # int f0/0\n             zone-member security Local\n      # int f1/0\n             zone-member security DMZ\n\nNOTE :- When u assign the interface to the ZOnes , all the traffic will be blocked to travel\n              from one zone to other\n\n3) Specify the Traffic flow between the zones\nThree steps\n1) Create a class-map to bring the reply back\n      # CLass-map type inspect (Reply) match-any c1\n                 match protocol telnet\n                 match protocol icmp\n                 match protocol http\n     # Policy-map Type inspect P1\n                 Class C1\n                     Inspection (Reply)\n    # Zone-Pair Security L-I  Source Local  destination Internet (Orig)\n                 Service-policy Type inspect P1"
+        x = -125.0
+        y = -297.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "192.168.3.0/24\nDMZ"
+        x = -396.0
+        y = -88.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "192.1.10.0/24\nOutside"
+        x = -453.0
+        y = -188.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 4]]
+        text = "10.11.11.0/24\n Inside"
+        x = -456.0
+        y = 40.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 5]]
+        text = "f1/0"
+        x = 72.9997821582
+        y = 21.8679875176
+        interface = R4 f1/0
+    [[NOTE 6]]
+        text = "f0/1"
+        x = 32.6279230749
+        y = -17.9982694471
+        interface = R4 f0/1
+    [[NOTE 7]]
+        text = "f0/0"
+        x = 33.0
+        y = 62.0
+        interface = R4 f0/0
+    [[NOTE 8]]
+        text = "f0/0"
+        x = -30.9997821582
+        y = 20.1320124824
+        interface = R3 f0/0
+    [[NOTE 9]]
+        text = "f0/0"
+        x = 33.3720769251
+        y = 61.9982694471
+        interface = R2 f0/0
+    [[NOTE 10]]
+        text = "f0/0"
+        x = 33.0
+        y = -18.0
+        interface = R1 f0/0

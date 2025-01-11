@@ -1,0 +1,162 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX2 e0
+        x = 471.167747731
+        y = -6.5563491861
+        z = 1.0
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = C:\eve\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R2 f1/0
+        e1 = R1 f1/0
+        e2 = R3 f1/0
+        x = -450.896536344
+        y = -156.350288425
+        z = 1.0
+    [[PIX PIX2]]
+        e0 = R5 f1/0
+        e1 = R4 f1/0
+        e2 = R3 f1/1
+        x = 175.592929113
+        y = -164.8355698
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e1
+        x = -702.043722601
+        y = -307.8355698
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e0
+        x = -703.13708499
+        y = -15.495382642
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX2 e1
+        x = 462.391052434
+        y = -292.078210487
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e2
+        f1/1 = PIX2 e2
+        x = -131.801948466
+        y = -165.394877579
+        z = 1.0
+[GNS3-DATA]
+    configs = .
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "e2"
+        x = -26.7856998573
+        y = 37.1731664919
+        interface = PIX2 e2
+    [[NOTE 2]]
+        text = "e1"
+        x = 65.7142858779
+        y = -28.658462233
+        interface = PIX2 e1
+    [[NOTE 3]]
+        text = "e0"
+        x = 66.4234124763
+        y = 50.1408101636
+        interface = PIX2 e0
+    [[NOTE 4]]
+        text = "e2"
+        x = 72.9839414172
+        y = 20.8666735928
+        interface = PIX1 e2
+    [[NOTE 5]]
+        text = "e1"
+        x = -12.1085423419
+        y = -30.5115115526
+        interface = PIX1 e1
+    [[NOTE 6]]
+        text = "e0"
+        x = -1.92381324246
+        y = 41.5019811457
+        interface = PIX1 e0
+    [[NOTE 7]]
+        text = "f1/0"
+        x = -1.83762603865
+        y = 2.34447121059
+        interface = R5 f1/0
+    [[NOTE 8]]
+        text = "f1/0"
+        x = -3.95692656499
+        y = 37.3031231737
+        interface = R4 f1/0
+    [[NOTE 9]]
+        text = "f1/1"
+        x = 72.9867099841
+        y = 20.9689691318
+        interface = R3 f1/1
+    [[NOTE 10]]
+        text = "f1/0"
+        x = -46.5819211637
+        y = 34.4470349062
+        interface = R3 f1/0
+    [[NOTE 11]]
+        text = "f1/0"
+        x = 67.9238132425
+        y = 2.49801885434
+        interface = R2 f1/0
+    [[NOTE 12]]
+        text = "f1/0"
+        x = 66.7948338429
+        y = 43.3988131804
+        interface = R1 f1/0

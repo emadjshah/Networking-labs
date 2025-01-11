@@ -1,0 +1,167 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        slot0 = NM-4E
+        e0/0 = SW2 2
+        cnfg = configs\R4.cfg
+        x = -541.0
+        y = 96.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        slot0 = NM-4E
+        e0/0 = SW1 1
+        cnfg = configs\R1.cfg
+        x = -553.0
+        y = -203.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        slot0 = NM-4E
+        e0/0 = SW1 2
+        cnfg = configs\R2.cfg
+        x = -551.0
+        y = -116.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        slot0 = NM-4E
+        e0/0 = SW2 1
+        cnfg = configs\R3.cfg
+        x = -547.0
+        y = 8.0
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R1 e0/0
+        2 = access 1 R2 e0/0
+        3 = access 1 R5 e0/0
+        x = -431.5
+        y = -119.0
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R3 e0/0
+        2 = access 1 R4 e0/0
+        3 = access 1 R5 e0/1
+        x = -428.5
+        y = 62.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2105
+        aux = 2505
+        slot0 = NM-4E
+        e0/0 = SW1 3
+        e0/1 = SW2 3
+        e0/2 = R6 e0/2
+        cnfg = configs\R5.cfg
+        x = -164.0
+        y = -69.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2106
+        aux = 2506
+        slot0 = NM-4E
+        e0/2 = R5 e0/2
+        cnfg = configs\R6.cfg
+        x = 183.0
+        y = -68.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "3"
+        x = 71.601675855
+        y = -1.22408199187
+        interface = SW2 3
+    [[NOTE 2]]
+        text = "2"
+        x = -2.27987186825
+        y = 29.1408249977
+        interface = SW2 2
+    [[NOTE 3]]
+        text = "1"
+        x = -1.68130040799
+        y = 1.25039322658
+        interface = SW2 1
+    [[NOTE 4]]
+        text = "3"
+        x = 74.6357124091
+        y = 24.2701882827
+        interface = SW1 3
+    [[NOTE 5]]
+        text = "2"
+        x = -4.39160053006
+        y = 18.9428229899
+        interface = SW1 2
+    [[NOTE 6]]
+        text = "1"
+        x = 1.64156988516
+        y = -5.29804474966
+        interface = SW1 1
+    [[NOTE 7]]
+        text = "e0/2"
+        x = -6.99983390049
+        y = 21.8847267035
+        interface = R6 e0/2
+    [[NOTE 8]]
+        text = "e0/2"
+        x = 72.9998339005
+        y = 22.1152732965
+        interface = R5 e0/2
+    [[NOTE 9]]
+        text = "e0/1"
+        x = -3.10167585497
+        y = 39.2240819919
+        interface = R5 e0/1
+    [[NOTE 10]]
+        text = "e0/0"
+        x = -6.13571240912
+        y = 13.7298117173
+        interface = R5 e0/0
+    [[NOTE 11]]
+        text = "e0/0"
+        x = 70.7798718682
+        y = 8.85917500235
+        interface = R4 e0/0
+    [[NOTE 12]]
+        text = "e0/0"
+        x = 70.181300408
+        y = 36.7496067734
+        interface = R3 e0/0
+    [[NOTE 13]]
+        text = "e0/0"
+        x = 72.8916005301
+        y = 19.0571770101
+        interface = R2 e0/0
+    [[NOTE 14]]
+        text = "e0/0"
+        x = 66.8584301148
+        y = 43.2980447497
+        interface = R1 e0/0

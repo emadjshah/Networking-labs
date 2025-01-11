@@ -1,0 +1,80 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = C:\Users\91600\AppData\Local\Temp
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        f0/0 = R3 f0/1
+        x = 66.0
+        y = -192.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = R2 f0/0
+        x = -631.0
+        y = -199.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/0
+        x = -397.0
+        y = -199.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        f0/0 = R2 f0/1
+        f0/1 = R4 f0/0
+        x = -152.0
+        y = -195.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "f0/0"
+        x = -6.9946699535
+        y = 21.3470257967
+        interface = R3 f0/0
+    [[NOTE 2]]
+        text = "f0/1"
+        x = 72.9962129779
+        y = 22.5504066006
+        interface = R3 f0/1
+    [[NOTE 3]]
+        text = "f0/1"
+        x = 72.9946699535
+        y = 22.6529742033
+        interface = R2 f0/1
+    [[NOTE 4]]
+        text = "f0/0"
+        x = -7.0
+        y = 22.0
+        interface = R2 f0/0
+    [[NOTE 5]]
+        text = "f0/0"
+        x = 73.0
+        y = 22.0
+        interface = R1 f0/0
+    [[NOTE 6]]
+        text = "f0/0"
+        x = -6.99621297791
+        y = 21.4495933994
+        interface = R4 f0/0

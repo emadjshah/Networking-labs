@@ -1,0 +1,117 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_wqrhk1\working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62e4cc50
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2113
+        aux = 2513
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e2
+        x = -553.0
+        y = -68.0
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2115
+        aux = 2515
+        cnfg = configs\R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e1
+        x = 26.0
+        y = -76.0
+        z = 1.0
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = D:\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R2 f1/0
+        e1 = R6 f1/0
+        e2 = R4 f1/0
+        e3 = R3 f1/0
+        x = -315.0
+        y = -72.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_wqrhk1\working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62e4cc50
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R2]]
+        console = 2111
+        aux = 2511
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e0
+        x = -318.0
+        y = -242.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2112
+        aux = 2512
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = PIX1 e3
+        x = -305.0
+        y = 132.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 1.0
+    m22 = 1.0
+    [[NOTE 1]]
+        text = "f1/0"
+        x = -6.75944126442
+        y = 17.6197225726
+        interface = R6 f1/0
+    [[NOTE 2]]
+        text = "f1/0"
+        x = 72.9991675598
+        y = 21.7419408545
+        interface = R4 f1/0
+    [[NOTE 3]]
+        text = "f1/0"
+        x = 37.7880200857
+        y = -17.7124018873
+        interface = R3 f1/0
+    [[NOTE 4]]
+        text = "f1/0"
+        x = 35.3101869883
+        y = 61.9332322268
+        interface = R2 f1/0
+    [[NOTE 5]]
+        text = "e1"
+        x = 72.7594412644
+        y = 26.3802774274
+        interface = PIX1 e1
+    [[NOTE 6]]
+        text = "e3"
+        x = 28.2119799143
+        y = 61.7124018873
+        interface = PIX1 e3
+    [[NOTE 7]]
+        text = "e2"
+        x = -6.99916755981
+        y = 22.2580591455
+        interface = PIX1 e2
+    [[NOTE 8]]
+        text = "e0"
+        x = 41.6898130117
+        y = -47.9332322268
+        interface = PIX1 e0

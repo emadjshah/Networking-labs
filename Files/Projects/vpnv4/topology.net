@@ -1,0 +1,242 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_lrjxmq\working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df860
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/1
+        cnfg = configs\R1.cfg
+        x = -532.0
+        y = -237.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/0
+        f1/1 = R1 f1/0
+        cnfg = configs\R2.cfg
+        x = -236.0
+        y = -78.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_lrjxmq\working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x606df860
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/1
+        cnfg = configs\R4.cfg
+        x = 458.0
+        y = -251.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        f1/1 = R4 f1/0
+        cnfg = configs\R3.cfg
+        x = 161.0
+        y = -79.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "R 1.0.0.0/8"
+        x = 447.0
+        y = -189.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+        color = "#0000ff"
+    [[NOTE 2]]
+        text = "4) Redistribute PE-PE protocol into PE-CE Protocol\n             # Router RIp \n                     address-family ipv4 vrf IBM\n                           Red bgp 100 metric 1"
+        x = -234.0
+        y = 188.0
+        font = "MS Shell Dlg 2,9,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "Sh ip bgp vpnv4 vrf IBM 1.0.0.0\n    1:1:1.0.0.0/8"
+        x = 50.0
+        y = -167.0
+    [[NOTE 4]]
+        text = "B 1.0.0.0/8"
+        x = 250.0
+        y = -39.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+        color = "#0000ff"
+    [[NOTE 5]]
+        text = "B 1:1:1.0.0.0/8"
+        x = 44.0
+        y = -6.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+        color = "#0000ff"
+    [[NOTE 6]]
+        text = "3) Redistribute PE-CE protocol into PE-PE protocol\n      # Router Bgp 100\n               address-family ipv4 vrf IBM\n                         Redistribute RIP"
+        x = -625.0
+        y = 184.0
+        font = "MS Shell Dlg 2,9,-1,5,75,0,0,0,0,0"
+    [[NOTE 7]]
+        text = "R 1.0.0.0/8"
+        x = -417.0
+        y = -88.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+        color = "#0000ff"
+    [[NOTE 8]]
+        text = "RIP"
+        x = 298.0
+        y = -196.0
+    [[NOTE 9]]
+        text = "RIP"
+        x = -354.0
+        y = -204.0
+    [[NOTE 10]]
+        text = "2) Build the relationship between PE-CE\n     A) Create a vrf for IBM\n             # IP vrf IBM\n                   RD 1:1\n                Route-target export 1:100\n                Route-target import 1:100\n    B) Assign that int to the vrf IBM thru which u r expecting IBM Routes\n            # int f1/1\n                     ip vrf forwarding IBM\n    C) Run RIP for Vrf IBM\n           # Router RIp\n                 address-family ipv4 vrf IBM\n                     net 12.0.0.0"
+        x = -215.0
+        y = -15.0
+        font = "MS Shell Dlg 2,9,-1,5,75,0,0,0,0,0"
+    [[NOTE 11]]
+        text = "f1/0"
+        x = 73.9998731043
+        y = 373.899244652
+    [[NOTE 12]]
+        text = "1) Build the Relationship between PE-PE\n     A) Configure the interfaces (F1/0)\n     B) Run BGP 100 (MPBGP)\n            # Router Bgp 100\n                  no au\n                  no sy\n                  neighbor  200.0.0.3 remote-as 100 (32 bits)\n                      address-family vpnv4\n                             neighbor 200.0.0.3 activate\n                             neighbor 200.0.0.3 send-community extended"
+        x = -621.0
+        y = 0.0
+        font = "MS Shell Dlg 2,9,-1,5,75,0,0,0,0,0"
+    [[NOTE 13]]
+        text = "1.0.0.0/8"
+        x = -615.0
+        y = -230.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 14]]
+        text = "34.0.0.0/8"
+        x = 286.0
+        y = -165.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 15]]
+        text = "12.0.0.0/8"
+        x = -375.0
+        y = -182.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 16]]
+        text = "200.0.0.0/24"
+        x = -84.0
+        y = -85.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 17]]
+        text = "CE"
+        x = 475.0
+        y = -232.0
+        color = "#ffffff"
+    [[NOTE 18]]
+        text = "CE"
+        x = -513.0
+        y = -221.0
+        color = "#ffffff"
+    [[NOTE 19]]
+        text = "PE"
+        x = 187.0
+        y = -58.0
+        color = "#ffffff"
+    [[NOTE 20]]
+        text = "PE"
+        x = -220.0
+        y = -55.0
+        color = "#ffffff"
+    [[NOTE 21]]
+        text = "IBM-SXR"
+        x = 501.0
+        y = -298.0
+    [[NOTE 22]]
+        text = "IBM-DEL"
+        x = -572.0
+        y = -296.0
+    [[NOTE 23]]
+        text = "f1/0"
+        x = -1.61439133328
+        y = 42.0460448125
+        interface = R4 f1/0
+    [[NOTE 24]]
+        text = "f1/1"
+        x = 67.6143913333
+        y = 1.95395518746
+        interface = R3 f1/1
+    [[NOTE 25]]
+        text = "f1/0"
+        x = -27.9998731043
+        y = 23.1007553479
+        interface = R3 f1/0
+    [[NOTE 26]]
+        text = "f1/1"
+        x = -53.2379391747
+        y = -4.92848759723
+        interface = R2 f1/1
+    [[NOTE 27]]
+        text = "f1/0"
+        x = 72.9998731043
+        y = 21.8992446521
+        interface = R2 f1/0
+    [[NOTE 28]]
+        text = "f1/0"
+        x = 68.2379391747
+        y = 40.9284875972
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = ellipse
+        x = 207.0
+        y = -113.0
+        width = 73.0
+        height = 81.0
+        border_style = 2
+    [[SHAPE 2]]
+        type = ellipse
+        x = -298.0
+        y = -119.0
+        width = 73.0
+        height = 81.0
+        border_style = 2
+    [[SHAPE 3]]
+        type = ellipse
+        x = 102.0
+        y = -105.0
+        width = 73.0
+        height = 81.0
+        border_style = 2
+    [[SHAPE 4]]
+        type = ellipse
+        x = -186.0
+        y = -103.0
+        width = 73.0
+        height = 81.0
+        border_style = 2
+    [[SHAPE 5]]
+        type = rectangle
+        x = -234.0
+        y = -107.0
+        width = 459.0
+        height = 86.0
+    [[SHAPE 6]]
+        type = rectangle
+        x = 457.0
+        y = -274.0
+        width = 150.0
+        height = 67.0
+    [[SHAPE 7]]
+        type = rectangle
+        x = -619.0
+        y = -266.0
+        width = 150.0
+        height = 67.0

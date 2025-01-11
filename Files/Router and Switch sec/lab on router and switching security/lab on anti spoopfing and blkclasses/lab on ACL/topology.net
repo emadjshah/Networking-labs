@@ -1,0 +1,158 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = R2 f1/0
+        cnfg = configs\R4.cfg
+        x = 40.7028847507
+        y = -209.407071781
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R2 f0/0
+        f0/1 = R6 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R7 f0/0
+        cnfg = configs\R1.cfg
+        x = -603.225396744
+        y = -209.171572875
+        z = 1.0
+        hx = 14.8431457505
+        hy = -41.9705627485
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R1 f0/0
+        f0/1 = R3 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R4 f0/0
+        slot2 = NM-1FE-TX
+        f2/0 = R5 f0/0
+        cnfg = configs\R2.cfg
+        x = -232.380326412
+        y = -208.387241597
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R2 f0/1
+        cnfg = configs\R3.cfg
+        x = 28.6324192326
+        y = -390.046155303
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        f0/0 = R2 f2/0
+        cnfg = configs\R5.cfg
+        x = 43.5313118754
+        y = -16.6030294867
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        f0/0 = R1 f0/1
+        cnfg = configs\R6.cfg
+        x = -807.16779613
+        y = -400.235157352
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        f0/0 = R1 f1/0
+        cnfg = configs\R7.cfg
+        x = -840.492158233
+        y = -16.2086461082
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "f0/0"
+        x = 64.0327987918
+        y = -3.23817345114
+        interface = R7 f0/0
+    [[NOTE 2]]
+        text = "f0/0"
+        x = 62.1909432129
+        y = 49.3475562773
+        interface = R6 f0/0
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 0.155182460141
+        y = -0.830198439203
+        interface = R5 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = -6.9997210726
+        y = 22.1493790948
+        interface = R4 f0/0
+    [[NOTE 5]]
+        text = "f0/0"
+        x = 0.168794807066
+        y = 44.8497694864
+        interface = R3 f0/0
+    [[NOTE 6]]
+        text = "f2/0"
+        x = 65.8448175399
+        y = 44.8301984392
+        interface = R2 f2/0
+    [[NOTE 7]]
+        text = "f1/0"
+        x = 72.9997210726
+        y = 21.8506209052
+        interface = R2 f1/0
+    [[NOTE 8]]
+        text = "f0/1"
+        x = 65.8312051929
+        y = -0.849769486352
+        interface = R2 f0/1
+    [[NOTE 9]]
+        text = "f0/0"
+        x = -6.99991053718
+        y = 21.9154008413
+        interface = R2 f0/0
+    [[NOTE 10]]
+        text = "f1/0"
+        x = 1.96720120823
+        y = 47.2381734511
+        interface = R1 f1/0
+    [[NOTE 11]]
+        text = "f0/1"
+        x = 3.80905678708
+        y = -5.3475562773
+        interface = R1 f0/1
+    [[NOTE 12]]
+        text = "f0/0"
+        x = 72.9999105372
+        y = 22.0845991587
+        interface = R1 f0/0

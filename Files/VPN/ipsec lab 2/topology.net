@@ -1,0 +1,69 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        f1/1 = R3 f1/0
+        x = -513.0
+        y = -100.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        x = -204.0
+        y = -216.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = C:\eve\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf62ac
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/1
+        x = -154.0
+        y = -68.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f1/0"
+        x = -6.84203441594
+        y = 18.4486208877
+        interface = R3 f1/0
+    [[NOTE 2]]
+        text = "f1/0"
+        x = -4.44818427389
+        y = 36.0582180446
+        interface = R2 f1/0
+    [[NOTE 3]]
+        text = "f1/1"
+        x = 72.8420344159
+        y = 25.5513791123
+        interface = R1 f1/1
+    [[NOTE 4]]
+        text = "f1/0"
+        x = 64.4481842739
+        y = -22.0582180446
+        interface = R1 f1/0

@@ -1,0 +1,114 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2110
+        aux = 2510
+        slot0 = NM-4E
+        e0/2 = R3 e0/2
+        cnfg = configs\R4.cfg
+        x = -52.0
+        y = -199.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2107
+        aux = 2507
+        slot0 = NM-4E
+        e0/0 = R2 e0/0
+        cnfg = configs\R1.cfg
+        x = -506.0
+        y = -132.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2108
+        aux = 2508
+        slot0 = NM-4E
+        e0/0 = R1 e0/0
+        e0/1 = R3 e0/1
+        cnfg = configs\R2.cfg
+        x = -330.0
+        y = -124.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2109
+        aux = 2509
+        slot0 = NM-4E
+        e0/1 = R2 e0/1
+        e0/2 = R4 e0/2
+        e0/3 = R5 e0/3
+        cnfg = configs\R3.cfg
+        x = -208.0
+        y = -124.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2111
+        aux = 2511
+        slot0 = NM-4E
+        e0/3 = R3 e0/3
+        cnfg = configs\R5.cfg
+        x = -46.0
+        y = -43.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "e0/3"
+        x = -2.77708764
+        y = 4.11145618
+        interface = R5 e0/3
+    [[NOTE 2]]
+        text = "e0/2"
+        x = -3.05009698101
+        y = 39.3317773947
+        interface = R4 e0/2
+    [[NOTE 3]]
+        text = "e0/3"
+        x = 68.77708764
+        y = 39.88854382
+        interface = R3 e0/3
+    [[NOTE 4]]
+        text = "e0/2"
+        x = 69.050096981
+        y = 4.66822260528
+        interface = R3 e0/2
+    [[NOTE 5]]
+        text = "e0/1"
+        x = -7.0
+        y = 22.0
+        interface = R3 e0/1
+    [[NOTE 6]]
+        text = "e0/1"
+        x = 73.0
+        y = 22.0
+        interface = R2 e0/1
+    [[NOTE 7]]
+        text = "e0/0"
+        x = -6.95874160841
+        y = 20.1836935633
+        interface = R2 e0/0
+    [[NOTE 8]]
+        text = "e0/0"
+        x = 72.9587416084
+        y = 23.8163064367
+        interface = R1 e0/0

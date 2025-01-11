@@ -1,0 +1,173 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        f0/0 = sw f1/3
+        x = -403.0
+        y = 8.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = sw f1/1
+        x = -602.0
+        y = 10.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        f0/0 = sw f1/2
+        x = -495.0
+        y = 10.0
+        z = 1.0
+    [[ROUTER sw]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\sw.cfg
+        slot1 = NM-16ESW
+        f1/0 = R8 f0/0
+        f1/1 = R2 f0/0
+        f1/2 = R3 f0/0
+        f1/3 = R4 f0/0
+        f1/4 = R5 f0/0
+        f1/5 = R6 f0/0
+        f1/7 = R7 f0/0
+        symbol = EtherSwitch router
+        x = -366.5
+        y = -123.5
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        f0/0 = sw f1/4
+        x = -304.0
+        y = 13.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        f0/0 = sw f1/5
+        x = -228.0
+        y = 1.0
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        f0/0 = sw f1/7
+        x = -145.0
+        y = 12.0
+        z = 1.0
+    [[ROUTER R8]]
+        model = 3725
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        f0/0 = sw f1/0
+        x = -372.0
+        y = -225.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f0/0"
+        x = 32.2234473521
+        y = 61.9924613644
+        interface = R8 f0/0
+    [[NOTE 2]]
+        text = "f0/0"
+        x = -1.52378455399
+        y = 1.79830947496
+        interface = R7 f0/0
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 2.40898620762
+        y = -3.77188148262
+        interface = R6 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 14.5873134218
+        y = -13.510181258
+        interface = R5 f0/0
+    [[NOTE 5]]
+        text = "f0/0"
+        x = 41.7090130492
+        y = -17.0404033241
+        interface = R4 f0/0
+    [[NOTE 6]]
+        text = "f0/0"
+        x = 60.0289851407
+        y = -7.48616560803
+        interface = R3 f0/0
+    [[NOTE 7]]
+        text = "f0/0"
+        x = 67.6170514192
+        y = 1.95854917833
+        interface = R2 f0/0
+    [[NOTE 8]]
+        text = "f1/7"
+        x = 71.023784554
+        y = 30.701690525
+        interface = sw f1/7
+    [[NOTE 9]]
+        text = "f1/5"
+        x = 56.0910137924
+        y = 49.2718814826
+        interface = sw f1/5
+    [[NOTE 10]]
+        text = "f1/4"
+        x = 43.9126865782
+        y = 59.010181258
+        interface = sw f1/4
+    [[NOTE 11]]
+        text = "f1/3"
+        x = 16.7909869508
+        y = 62.5404033241
+        interface = sw f1/3
+    [[NOTE 12]]
+        text = "f1/2"
+        x = -1.52898514069
+        y = 52.986165608
+        interface = sw f1/2
+    [[NOTE 13]]
+        text = "f1/1"
+        x = -9.11705141925
+        y = 43.5414508217
+        interface = sw f1/1
+    [[NOTE 14]]
+        text = "f1/0"
+        x = 26.2765526479
+        y = -16.4924613644
+        interface = sw f1/0

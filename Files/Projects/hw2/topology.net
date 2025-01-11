@@ -1,0 +1,147 @@
+autostart = False
+version = 0.8.4-RC2
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot0 = NM-4E
+        e0/2 = R2 e0/2
+        e0/3 = R5 e0/3
+        x = -321.0
+        y = -57.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot0 = NM-4E
+        e0/0 = R2 e0/0
+        x = -612.0
+        y = -149.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot0 = NM-4E
+        e0/0 = R1 e0/0
+        e0/1 = R3 e0/1
+        e0/2 = R4 e0/2
+        x = -435.0
+        y = -151.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot0 = NM-4E
+        e0/0 = R5 e0/0
+        e0/1 = R2 e0/1
+        x = -324.0
+        y = -242.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot0 = NM-4E
+        e0/0 = R3 e0/0
+        e0/1 = R6 e0/0
+        e0/3 = R4 e0/3
+        x = -211.0
+        y = -152.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        slot0 = NM-1E
+        e0/0 = R5 e0/1
+        x = -16.0
+        y = -150.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "e0/1"
+        x = 2.06655575251
+        y = 47.3598506894
+        interface = R3 e0/1
+    [[NOTE 2]]
+        text = "e0/0"
+        x = 64.2887069211
+        y = 46.9202090522
+        interface = R3 e0/0
+    [[NOTE 3]]
+        text = "e0/1"
+        x = 63.9334442475
+        y = -3.35985068938
+        interface = R2 e0/1
+    [[NOTE 4]]
+        text = "e0/0"
+        x = -6.99744669986
+        y = 22.4519485503
+        interface = R2 e0/0
+    [[NOTE 5]]
+        text = "e0/2"
+        x = 63.8615746525
+        y = 47.44726331
+        interface = R2 e0/2
+    [[NOTE 6]]
+        text = "e0/0"
+        x = 72.9974466999
+        y = 21.5480514497
+        interface = R1 e0/0
+    [[NOTE 7]]
+        text = "e0/0"
+        x = -6.99789628695
+        y = 21.5897651663
+        interface = R6 e0/0
+    [[NOTE 8]]
+        text = "e0/1"
+        x = 72.9978962869
+        y = 22.4102348337
+        interface = R5 e0/1
+    [[NOTE 9]]
+        text = "e0/0"
+        x = 1.7112930789
+        y = -2.9202090522
+        interface = R5 e0/0
+    [[NOTE 10]]
+        text = "e0/3"
+        x = 2.72707968923
+        y = 48.1447948138
+        interface = R5 e0/3
+    [[NOTE 11]]
+        text = "e0/3"
+        x = 63.2729203108
+        y = -4.14479481384
+        interface = R4 e0/3
+    [[NOTE 12]]
+        text = "e0/2"
+        x = 2.13842534748
+        y = -3.44726330997
+        interface = R4 e0/2

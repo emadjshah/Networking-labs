@@ -1,0 +1,454 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        slot1 = PA-2FE-TX
+        f1/0 = R7 f3/0
+        cnfg = configs\R5.cfg
+        x = -533.0
+        y = 226.0
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        slot1 = PA-2FE-TX
+        f1/0 = R8 f3/0
+        cnfg = configs\R6.cfg
+        x = 462.0
+        y = 215.0
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        slot1 = PA-8T
+        s1/0 = R8 s1/0
+        s1/1 = R8 s1/1
+        s1/2 = R8 s1/2
+        slot2 = PA-2FE-TX
+        f2/0 = R1 f1/0
+        f2/1 = R3 f1/0
+        slot3 = PA-2FE-TX
+        f3/0 = R5 f1/0
+        cnfg = configs\R7.cfg
+        x = -194.0
+        y = 0.0
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        slot1 = PA-8T
+        s1/0 = R7 s1/0
+        s1/1 = R7 s1/1
+        s1/2 = R7 s1/2
+        slot2 = PA-2FE-TX
+        f2/0 = R2 f1/0
+        f2/1 = R4 f1/0
+        slot3 = PA-2FE-TX
+        f3/0 = R6 f1/0
+        cnfg = configs\R8.cfg
+        x = 131.0
+        y = 4.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        slot1 = PA-2FE-TX
+        f1/0 = R7 f2/0
+        cnfg = configs\R1.cfg
+        x = -527.0
+        y = -249.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        slot1 = PA-2FE-TX
+        f1/0 = R8 f2/0
+        cnfg = configs\R2.cfg
+        x = 455.0
+        y = -251.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        slot1 = PA-2FE-TX
+        f1/0 = R8 f2/1
+        cnfg = configs\R4.cfg
+        x = 477.0
+        y = -3.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        slot1 = PA-2FE-TX
+        f1/0 = R7 f2/1
+        cnfg = configs\R3.cfg
+        x = -532.0
+        y = 6.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "68.0.0.0/8"
+        x = 261.0
+        y = 135.0
+    [[NOTE 2]]
+        text = "57.0.0.0/8"
+        x = -374.0
+        y = 153.0
+    [[NOTE 3]]
+        text = "s1/2                   f3/0"
+        x = 106.0
+        y = 221.0
+    [[NOTE 4]]
+        text = "f3/0            s1/2"
+        x = -220.0
+        y = 238.0
+    [[NOTE 5]]
+        text = "HCL"
+        x = 153.0
+        y = 208.0
+    [[NOTE 6]]
+        text = "HCL"
+        x = -184.0
+        y = 212.0
+    [[NOTE 7]]
+        text = "48.0.0.0/8"
+        x = 290.0
+        y = 19.0
+    [[NOTE 8]]
+        text = "37.0.0.0/8"
+        x = -376.0
+        y = 32.0
+    [[NOTE 9]]
+        text = "s1/1             f2/1"
+        x = 103.0
+        y = 167.0
+    [[NOTE 10]]
+        text = "f2/1              s1/1"
+        x = -227.0
+        y = 169.0
+    [[NOTE 11]]
+        text = "WIPRO"
+        x = 125.0
+        y = 151.0
+    [[NOTE 12]]
+        text = "WIPRO"
+        x = -188.0
+        y = 152.0
+    [[NOTE 13]]
+        text = "R 1.0.0.0/8"
+        x = 447.0
+        y = -171.0
+        color = "#0000ff"
+    [[NOTE 14]]
+        text = "R 1.0.0.0/8"
+        x = 117.0
+        y = 119.0
+        color = "#0000ff"
+    [[NOTE 15]]
+        text = "R 1.0.0.0/8"
+        x = -203.0
+        y = 119.0
+        color = "#0000ff"
+    [[NOTE 16]]
+        text = "OSPF"
+        x = -385.0
+        y = 121.0
+    [[NOTE 17]]
+        text = "Eigrp-100"
+        x = -375.0
+        y = -4.0
+    [[NOTE 18]]
+        text = "f2/0"
+        x = 183.0
+        y = 106.0
+    [[NOTE 19]]
+        text = "s1/0"
+        x = 86.0
+        y = 103.0
+    [[NOTE 20]]
+        text = "1.0.0.0/8"
+        x = 29.0
+        y = 362.0
+    [[NOTE 21]]
+        text = "s1/0"
+        x = -127.0
+        y = 108.0
+    [[NOTE 22]]
+        text = "1.0.0.0/8"
+        x = -241.0
+        y = 364.0
+    [[NOTE 23]]
+        text = "f2/0"
+        x = -229.0
+        y = 107.0
+    [[NOTE 24]]
+        text = "IBM"
+        x = 137.0
+        y = 87.0
+    [[NOTE 25]]
+        text = "IBM"
+        x = -190.0
+        y = 93.0
+    [[NOTE 26]]
+        text = "28.0.0.0/8\n   RIP"
+        x = 259.0
+        y = -145.0
+    [[NOTE 27]]
+        text = "17.0.0.0/8\n  RIP"
+        x = -344.0
+        y = -144.0
+    [[NOTE 28]]
+        text = "200.1.1.0/24\n\n200.2.2.0/24\n\n200.3.3.0/24"
+        x = -54.0
+        y = -80.0
+    [[NOTE 29]]
+        text = "5.0.0.0/8"
+        x = -614.0
+        y = 245.0
+    [[NOTE 30]]
+        text = "3.0.0.0/8"
+        x = -628.0
+        y = 9.0
+    [[NOTE 31]]
+        text = "1.0.0.0/8"
+        x = -590.0
+        y = -251.0
+    [[NOTE 32]]
+        text = "Hcl-SXR"
+        x = 556.0
+        y = 257.0
+    [[NOTE 33]]
+        text = "Hcl-DEL"
+        x = -623.0
+        y = 267.0
+    [[NOTE 34]]
+        text = "Wipro-SXR"
+        x = 554.0
+        y = -36.0
+    [[NOTE 35]]
+        text = "Wipro-DEL"
+        x = -626.0
+        y = -22.0
+    [[NOTE 36]]
+        text = "IBM-SXR"
+        x = 548.0
+        y = -278.0
+    [[NOTE 37]]
+        text = "IBM-DEL"
+        x = -614.0
+        y = -282.0
+    [[NOTE 38]]
+        text = "f3/0"
+        x = 48.7296652924
+        y = 54.501387845
+        interface = R8 f3/0
+    [[NOTE 39]]
+        text = "f2/1"
+        x = 72.9892502916
+        y = 21.0727130367
+        interface = R8 f2/1
+    [[NOTE 40]]
+        text = "f2/0"
+        x = 49.4325245562
+        y = -48.7385609933
+        interface = R8 f2/0
+    [[NOTE 41]]
+        text = "s1/2"
+        x = -74.0137500853
+        y = -24.045790722
+        interface = R8 s1/2
+    [[NOTE 42]]
+        text = "s1/1"
+        x = -70.9003054913
+        y = -55.9281095224
+        interface = R8 s1/1
+    [[NOTE 43]]
+        text = "s1/0"
+        x = -63.9463158131
+        y = -81.9283212219
+        interface = R8 s1/0
+    [[NOTE 44]]
+        text = "f3/0"
+        x = -75.2820117735
+        y = 59.188007849
+        interface = R7 f3/0
+    [[NOTE 45]]
+        text = "f2/1"
+        x = -88.9936991887
+        y = 2.70994732288
+        interface = R7 f2/1
+    [[NOTE 46]]
+        text = "f2/0"
+        x = -22.0345986826
+        y = -36.9537990149
+        interface = R7 f2/0
+    [[NOTE 47]]
+        text = "s1/2"
+        x = 79.8906824829
+        y = -20.9549665884
+        interface = R7 s1/2
+    [[NOTE 48]]
+        text = "s1/1"
+        x = 76.9923261349
+        y = -51.0714670787
+        interface = R7 s1/1
+    [[NOTE 49]]
+        text = "s1/0"
+        x = 76.9463158131
+        y = -76.0716787781
+        interface = R7 s1/0
+    [[NOTE 50]]
+        text = "f1/0"
+        x = -0.729665292414
+        y = 0.498612154987
+        interface = R6 f1/0
+    [[NOTE 51]]
+        text = "f1/0"
+        x = 66.2820117735
+        y = -0.188007849009
+        interface = R5 f1/0
+    [[NOTE 52]]
+        text = "f1/0"
+        x = -6.98925029164
+        y = 22.9272869633
+        interface = R4 f1/0
+    [[NOTE 53]]
+        text = "f1/0"
+        x = 72.9936991887
+        y = 21.2900526771
+        interface = R3 f1/0
+    [[NOTE 54]]
+        text = "f1/0"
+        x = 1.56747544376
+        y = 46.7385609933
+        interface = R2 f1/0
+    [[NOTE 55]]
+        text = "f1/0"
+        x = 65.0345986826
+        y = 45.9537990149
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = ellipse
+        x = 96.0
+        y = 212.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 2]]
+        type = ellipse
+        x = -238.0
+        y = 216.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 3]]
+        type = ellipse
+        x = 85.0
+        y = 149.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 4]]
+        type = ellipse
+        x = -238.0
+        y = 153.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 5]]
+        type = ellipse
+        x = 81.0
+        y = 92.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 6]]
+        type = ellipse
+        x = -240.0
+        y = 96.0
+        width = 154.0
+        height = 50.0
+        border_style = 2
+    [[SHAPE 7]]
+        type = rectangle
+        x = 460.0
+        y = 212.0
+        width = 158.0
+        height = 72.0
+        fill_color = "#55aaff"
+        border_color = "#ffffff"
+    [[SHAPE 8]]
+        type = rectangle
+        x = -623.0
+        y = 227.0
+        width = 158.0
+        height = 72.0
+        fill_color = "#55aaff"
+        border_color = "#ffffff"
+    [[SHAPE 9]]
+        type = rectangle
+        x = 472.0
+        y = -30.0
+        width = 163.0
+        height = 72.0
+        fill_color = "#ffaa7f"
+        border_color = "#ffffff"
+    [[SHAPE 10]]
+        type = rectangle
+        x = -626.0
+        y = -18.0
+        width = 158.0
+        height = 72.0
+        fill_color = "#ffaa7f"
+        border_color = "#ffffff"
+    [[SHAPE 11]]
+        type = rectangle
+        x = 458.0
+        y = -281.0
+        width = 158.0
+        height = 72.0
+        fill_color = "#aaff7f"
+        border_color = "#ffffff"
+    [[SHAPE 12]]
+        type = rectangle
+        x = -624.0
+        y = -282.0
+        width = 158.0
+        height = 72.0
+        fill_color = "#aaff7f"
+        border_color = "#ffffff"

@@ -1,0 +1,307 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        model = 3725
+        console = 2119
+        aux = 2519
+        f0/0 = R3 f1/4
+        x = 296.0
+        y = 165.0
+        z = 1.0
+    [[ROUTER R11]]
+        model = 3725
+        console = 2118
+        aux = 2518
+        f0/0 = R3 f1/3
+        x = 191.0
+        y = 169.0
+        z = 1.0
+    [[ROUTER R9]]
+        model = 3725
+        console = 2116
+        aux = 2516
+        f0/0 = R2 f1/3
+        x = -445.0
+        y = 173.0
+        z = 1.0
+    [[ROUTER R10]]
+        model = 3725
+        console = 2117
+        aux = 2517
+        f0/0 = R3 f1/2
+        x = 85.0
+        y = 168.0
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R13]]
+        model = 3725
+        console = 2120
+        aux = 2520
+        f0/0 = R1 f1/5
+        f0/1 = R1 f1/6
+        slot1 = NM-1FE-TX
+        f1/0 = R1 f1/7
+        x = -194.0
+        y = -255.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2111
+        aux = 2511
+        f0/0 = R1 f1/2
+        x = -286.0
+        y = 47.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2108
+        aux = 2508
+        slot1 = NM-16ESW
+        f1/0 = R2 f1/0
+        f1/1 = R3 f1/1
+        f1/2 = R4 f0/0
+        f1/3 = R5 f0/0
+        f1/4 = R6 f0/0
+        f1/5 = R13 f0/0
+        f1/6 = R13 f0/1
+        f1/7 = R13 f1/0
+        symbol = EtherSwitch router
+        x = -185.5
+        y = -87.5
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2109
+        aux = 2509
+        slot1 = NM-16ESW
+        f1/0 = R1 f1/0
+        f1/1 = R7 f0/0
+        f1/2 = R8 f0/0
+        f1/3 = R9 f0/0
+        symbol = EtherSwitch router
+        x = -524.5
+        y = 39.5
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2110
+        aux = 2510
+        slot1 = NM-16ESW
+        f1/1 = R1 f1/1
+        f1/2 = R10 f0/0
+        f1/3 = R11 f0/0
+        f1/4 = R12 f0/0
+        symbol = EtherSwitch router
+        x = 183.5
+        y = 32.5
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        model = 3725
+        console = 2112
+        aux = 2512
+        f0/0 = R1 f1/3
+        x = -197.0
+        y = 54.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3725
+        console = 2113
+        aux = 2513
+        f0/0 = R1 f1/4
+        x = -104.0
+        y = 55.0
+        z = 1.0
+    [[ROUTER R7]]
+        model = 3725
+        console = 2114
+        aux = 2514
+        f0/0 = R2 f1/1
+        x = -619.0
+        y = 173.0
+        z = 1.0
+    [[ROUTER R8]]
+        model = 3725
+        console = 2115
+        aux = 2515
+        f0/0 = R2 f1/2
+        x = -532.0
+        y = 171.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    [[NOTE 1]]
+        text = "f1/0"
+        x = 77.2366822471
+        y = 61.9992997628
+        interface = R13 f1/0
+    [[NOTE 2]]
+        text = "f0/1"
+        x = -18.7634052825
+        y = 63.9697144819
+        interface = R13 f0/1
+    [[NOTE 3]]
+        text = "f0/0"
+        x = 38.2366822471
+        y = 43.9992997628
+        interface = R13 f0/0
+    [[NOTE 4]]
+        text = "f0/0"
+        x = 5.98121224413
+        y = -7.49550996683
+        interface = R12 f0/0
+    [[NOTE 5]]
+        text = "f0/0"
+        x = 28.582738957
+        y = -17.7553493869
+        interface = R11 f0/0
+    [[NOTE 6]]
+        text = "f0/0"
+        x = 55.4721329718
+        y = -11.0908331672
+        interface = R10 f0/0
+    [[NOTE 7]]
+        text = "f0/0"
+        x = 10.9874655146
+        y = -11.3983281847
+        interface = R9 f0/0
+    [[NOTE 8]]
+        text = "f0/0"
+        x = 33.0
+        y = -18.0
+        interface = R8 f0/0
+    [[NOTE 9]]
+        text = "f0/0"
+        x = 55.0125344854
+        y = -11.3983281847
+        interface = R7 f0/0
+    [[NOTE 10]]
+        text = "f0/0"
+        x = 11.6493068737
+        y = -11.8252554023
+        interface = R6 f0/0
+    [[NOTE 11]]
+        text = "f0/0"
+        x = 34.142390956
+        y = -17.9836834584
+        interface = R5 f0/0
+    [[NOTE 12]]
+        text = "f0/0"
+        x = 55.9219490687
+        y = -10.7808518939
+        interface = R4 f0/0
+    [[NOTE 13]]
+        text = "f1/4"
+        x = 52.5187877559
+        y = 52.9955099668
+        interface = R3 f1/4
+    [[NOTE 14]]
+        text = "f1/3"
+        x = 29.917261043
+        y = 63.2553493869
+        interface = R3 f1/3
+    [[NOTE 15]]
+        text = "f1/2"
+        x = 3.02786702824
+        y = 56.5908331672
+        interface = R3 f1/2
+    [[NOTE 16]]
+        text = "f1/1"
+        x = -9.62583593938
+        y = 4.36428340616
+        interface = R3 f1/1
+    [[NOTE 17]]
+        text = "f1/3"
+        x = 47.5125344854
+        y = 56.8983281847
+        interface = R2 f1/3
+    [[NOTE 18]]
+        text = "f1/2"
+        x = 25.5
+        y = 63.5
+        interface = R2 f1/2
+    [[NOTE 19]]
+        text = "f1/1"
+        x = 3.48746551465
+        y = 56.8983281847
+        interface = R2 f1/1
+    [[NOTE 20]]
+        text = "f1/0"
+        x = 62.1061725592
+        y = 7.3758525632
+        interface = R2 f1/0
+    [[NOTE 21]]
+        text = "f1/7"
+        x = 70.2633177529
+        y = -34.4992997628
+        interface = R1 f1/7
+    [[NOTE 22]]
+        text = "f1/6"
+        x = -27.7367697768
+        y = -22.5288850437
+        interface = R1 f1/6
+    [[NOTE 23]]
+        text = "f1/5"
+        x = 30.2633177529
+        y = -22.4992997628
+        interface = R1 f1/5
+    [[NOTE 24]]
+        text = "f1/4"
+        x = 46.8506931263
+        y = 57.3252554023
+        interface = R1 f1/4
+    [[NOTE 25]]
+        text = "f1/3"
+        x = 24.357609044
+        y = 63.4836834584
+        interface = R1 f1/3
+    [[NOTE 26]]
+        text = "f1/2"
+        x = 2.57805093131
+        y = 56.2808518939
+        interface = R1 f1/2
+    [[NOTE 27]]
+        text = "f1/1"
+        x = 87.6258359394
+        y = 17.6357165938
+        interface = R1 f1/1
+    [[NOTE 28]]
+        text = "f1/0"
+        x = -61.1061725592
+        y = 26.6241474368
+        interface = R1 f1/0

@@ -1,0 +1,96 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -450.1930009
+        y = 238.215295477
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3640]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3640-ik9o3s-mz.122-15.T17.bin
+        sparsemem = True
+        chassis = 3640
+    [[ROUTER R1]]
+        model = 3640
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = R2 f1/0
+        x = -629.462986798
+        y = -354.267027305
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+    [[ETHSW SW1]]
+        1 = access 1 R2 f1/1
+        2 = access 1 R4 f1/0
+        3 = access 1 R3 f1/0
+        x = -637.954977571
+        y = 121.17871555
+        z = 1.0
+        hx = 49.5269119346
+        hy = 457.246824769
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f0/0
+        f1/1 = SW1 1
+        x = -633.119841047
+        y = -76.2426406871
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        x = -793.846896557
+        y = 238.215295477
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.5
+    m22 = 0.5
+    [[NOTE 1]]
+        text = "Telnet R1"
+        x = -217.788888605
+        y = -94.0243866176
+    [[NOTE 2]]
+        text = "200.0.0.0/24"
+        x = -742.462120246
+        y = -225.546247918
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "10.0.0.0/8"
+        x = -787.716954242
+        y = 108.007142675
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[SHAPE 1]]
+        type = rectangle
+        x = -845.699710299
+        y = -84.8528137424
+        width = 520.430590953
+        height = 367.695526217

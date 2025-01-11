@@ -1,0 +1,70 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_ouzldm\working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        x = -427.0
+        y = -231.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        x = 163.0
+        y = -232.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "R1\nIP access-list Extended ABC\n  10   Deny Tcp     2.0.0.0    0.255.255.255   1.0.0.0       0.255.255.255   eq 23\n  50  Deny Icmp  22.0.0.0  0.255.255.255   11.0.0.0    0.255.255.255\n  60  Per     ip         any     any\n\n# int f1/0\n         IP access-group ABC in"
+        x = -197.0
+        y = -35.0
+        font = "MS Shell Dlg 2,11,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "R1\n# Access-list 100 Deny Tcp     2.0.0.0    0.255.255.255   1.0.0.0       0.255.255.255   eq 23\n# Access-list 100 Deny Icmp  22.0.0.0  0.255.255.255   11.0.0.0    0.255.255.255\n# Access-list 100 Per     ip         any     any\n\n# int f1/0\n         IP access-group 100 in"
+        x = -594.0
+        y = -113.0
+        font = "MS Shell Dlg 2,11,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "Objective on R1-ACL\n1) Deny the Traffic if its comming from 2.0.0.0/8 towards 1.0.0.0/8 for TELNET\n2) Deny the Traffic if its comming from 22.0.0.0/8 towards 11.0.0.0/8 for ICMP\n3) Permit the Rest"
+        x = -596.0
+        y = 132.0
+        font = "MS Shell Dlg 2,11,-1,5,75,0,0,0,0,0"
+    [[NOTE 4]]
+        text = "ACL"
+        x = -353.0
+        y = -189.0
+    [[NOTE 5]]
+        text = "1.0.0.0/8\n\n\n11.0.0.0/8"
+        x = -529.0
+        y = -251.0
+    [[NOTE 6]]
+        text = "2.0.0.0/8\n\n\n22.0.0.0/8"
+        x = 231.0
+        y = -251.0
+    [[NOTE 7]]
+        text = "10.0.0.0/8"
+        x = -179.0
+        y = -243.0
+    [[NOTE 8]]
+        text = "f1/0"
+        x = -37.9999425454
+        y = 24.0677965128
+        interface = R2 f1/0
+    [[NOTE 9]]
+        text = "f1/0"
+        x = 72.9999425454
+        y = 21.9322034872
+        interface = R1 f1/0

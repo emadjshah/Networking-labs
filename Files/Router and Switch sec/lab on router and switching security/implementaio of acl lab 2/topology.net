@@ -1,0 +1,328 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2117
+        aux = 2517
+        cnfg = configs\R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -695.773736704
+        y = 172.327993849
+        z = 1.0
+        hx = 17.6715728753
+        hy = -10.8578643763
+    [[ROUTER R6]]
+        console = 2118
+        aux = 2518
+        cnfg = configs\R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 3
+        x = -548.167747731
+        y = 169.825468532
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2119
+        aux = 2519
+        cnfg = configs\R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 2
+        x = -409.352380466
+        y = 169.416305603
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2120
+        aux = 2520
+        cnfg = configs\R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 2
+        x = 11.6740981922
+        y = 165.173664916
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2113
+        aux = 2513
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/0
+        f1/1 = SW1 1
+        slot2 = PA-2FE-TX
+        f2/0 = SW2 1
+        x = -613.002092041
+        y = -203.847763109
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2114
+        aux = 2514
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R3 f1/1
+        f1/1 = SW3 1
+        x = 215.012193309
+        y = -211.012193309
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R1 f1/1
+        2 = access 1 R5 f1/0
+        3 = access 1 R4 f1/0
+        x = -739.778354062
+        y = -42.8700576851
+        z = 1.0
+        hx = 8.51471862576
+        hy = -63.1837661841
+    [[ETHSW SW3]]
+        1 = access 1 R2 f1/1
+        2 = access 1 R8 f1/0
+        3 = access 1 R9 f1/0
+        4 = access 1 R10 f1/0
+        5 = access 1 R11 f1/0
+        x = 211.987373415
+        y = -134.793939239
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R1 f2/0
+        2 = access 1 R7 f1/0
+        3 = access 1 R6 f1/0
+        x = -492.290980647
+        y = -13.1715728753
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2116
+        aux = 2516
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        x = -862.052957317
+        y = 168.539105243
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2115
+        aux = 2515
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        f1/1 = R2 f1/0
+        x = -221.556349186
+        y = -369.936074863
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = working
+    udp = 10401
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R9]]
+        console = 2121
+        aux = 2521
+        cnfg = configs\R9.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 3
+        x = 159.757359313
+        y = 166.587878479
+        z = 1.0
+    [[ROUTER R10]]
+        console = 2122
+        aux = 2522
+        cnfg = configs\R10.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 4
+        x = 305.012193309
+        y = 160.931024229
+        z = 1.0
+[127.0.0.1:7205]
+    workingdir = working
+    udp = 10501
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf3470
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R11]]
+        console = 2123
+        aux = 2523
+        cnfg = configs\R11.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 5
+        x = 468.651803616
+        y = 163.759451354
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "BRANCH B"
+        x = 380.423448278
+        y = -244.132034356
+        font = "MS Shell Dlg 2,16,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "BRANCH A"
+        x = -838.628642487
+        y = -242.516810667
+        font = "MS Shell Dlg 2,16,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "5"
+        x = 61.1293847378
+        y = 46.7104971949
+        interface = SW3 5
+    [[NOTE 4]]
+        text = "4"
+        x = 46.9947694252
+        y = 54.3127951977
+        interface = SW3 4
+    [[NOTE 5]]
+        text = "3"
+        x = 28.4881903773
+        y = 55.3806364323
+        interface = SW3 3
+    [[NOTE 6]]
+        text = "2"
+        x = 13.3999655452
+        y = 49.3404930542
+        interface = SW3 2
+    [[NOTE 7]]
+        text = "3"
+        x = 23.6952250317
+        y = 54.2184155604
+        interface = SW2 3
+    [[NOTE 8]]
+        text = "2"
+        x = 51.1933283936
+        y = 52.7929265475
+        interface = SW2 2
+    [[NOTE 9]]
+        text = "1"
+        x = 13.3003117199
+        y = -17.2742218582
+        interface = SW2 1
+    [[NOTE 10]]
+        text = "3"
+        x = 15.5894233231
+        y = 50.6924910664
+        interface = SW1 3
+    [[NOTE 11]]
+        text = "2"
+        x = 42.8766892357
+        y = 55.3139219097
+        interface = SW1 2
+    [[NOTE 12]]
+        text = "1"
+        x = 60.5238941219
+        y = -15.2058443721
+        interface = SW1 1
+    [[NOTE 13]]
+        text = "f1/0"
+        x = 7.37061526218
+        y = -8.71049719495
+        interface = R11 f1/0
+    [[NOTE 14]]
+        text = "f1/0"
+        x = 21.5052305748
+        y = -16.3127951977
+        interface = R10 f1/0
+    [[NOTE 15]]
+        text = "f1/0"
+        x = 40.0118096227
+        y = -17.3806364323
+        interface = R9 f1/0
+    [[NOTE 16]]
+        text = "f1/0"
+        x = 55.1000344548
+        y = -11.3404930542
+        interface = R8 f1/0
+    [[NOTE 17]]
+        text = "f1/0"
+        x = 17.3066716064
+        y = -14.7929265475
+        interface = R7 f1/0
+    [[NOTE 18]]
+        text = "f1/0"
+        x = 44.8047749683
+        y = -16.2184155604
+        interface = R6 f1/0
+    [[NOTE 19]]
+        text = "f1/0"
+        x = 25.6233107643
+        y = -17.3139219097
+        interface = R5 f1/0
+    [[NOTE 20]]
+        text = "f1/0"
+        x = 52.9105766769
+        y = -12.6924910664
+        interface = R4 f1/0
+    [[NOTE 21]]
+        text = "f1/1"
+        x = 70.5869873611
+        y = 35.6827768057
+        interface = R3 f1/1
+    [[NOTE 22]]
+        text = "f1/0"
+        x = -3.82258059345
+        y = 37.6236218093
+        interface = R3 f1/0
+    [[NOTE 23]]
+        text = "f1/0"
+        x = -4.58698736112
+        y = 8.31722319427
+        interface = R2 f1/0
+    [[NOTE 24]]
+        text = "f2/0"
+        x = 55.1996882801
+        y = 55.2742218582
+        interface = R1 f2/0
+    [[NOTE 25]]
+        text = "f1/1"
+        x = 7.97610587812
+        y = 53.2058443721
+        interface = R1 f1/1
+    [[NOTE 26]]
+        text = "f1/0"
+        x = 69.8225805934
+        y = 6.37637819074
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = 12.7279220614
+        y = -208.090403796
+        width = 521.844804516
+        height = 411.536146651
+    [[SHAPE 2]]
+        type = rectangle
+        x = -861.256059485
+        y = -197.989898732
+        width = 516.187950266
+        height = 411.536146651

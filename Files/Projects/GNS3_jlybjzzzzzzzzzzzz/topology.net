@@ -1,0 +1,224 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 5
+        f1/1 = SW2 1
+        x = -344.0
+        y = -177.0
+        z = 1.0
+    [[ROUTER R6]]
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 6
+        f1/1 = SW3 1
+        x = -333.0
+        y = 25.0
+        z = 1.0
+    [[ETHSW SW3]]
+        1 = access 1 R6 f1/1
+        2 = access 1 R9 f1/0
+        3 = access 1 R10 f1/0
+        x = -203.5
+        y = 50.0
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R5 f1/1
+        2 = access 1 R7 f1/0
+        3 = access 1 R8 f1/0
+        x = -229.5
+        y = -157.0
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10301
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R7]]
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 2
+        x = -94.0
+        y = -256.0
+        z = 1.0
+    [[ROUTER R8]]
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW2 3
+        f1/1 = SW4 1
+        x = -81.0
+        y = -74.0
+        z = 1.0
+    [[ETHSW SW4]]
+        1 = access 1 R8 f1/1
+        2 = access 1 R11 f1/0
+        3 = access 1 R12 f1/0
+        x = 55.5
+        y = -128.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 1
+        x = -604.0
+        y = -211.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -622.0
+        y = -96.0
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R1 f1/0
+        2 = access 1 R2 f1/0
+        3 = access 1 R3 f1/0
+        4 = access 1 R4 f1/0
+        5 = access 1 R5 f1/0
+        6 = access 1 R6 f1/0
+        x = -514.5
+        y = -31.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 4
+        x = -613.0
+        y = 110.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        x = -609.0
+        y = -31.0
+        z = 1.0
+[127.0.0.1:7206]
+    workingdir = working
+    udp = 10601
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R14]]
+        console = 2114
+        aux = 2514
+        cnfg = configs\R14.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW5 3
+        x = 244.0
+        y = 157.0
+        z = 1.0
+    [[ROUTER R13]]
+        console = 2113
+        aux = 2513
+        cnfg = configs\R13.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW5 2
+        x = 250.0
+        y = 22.0
+        z = 1.0
+[127.0.0.1:7204]
+    workingdir = working
+    udp = 10401
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R9]]
+        console = 2109
+        aux = 2509
+        cnfg = configs\R9.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 2
+        f1/1 = R12 f1/1
+        x = -91.0
+        y = 44.0
+        z = 1.0
+    [[ROUTER R10]]
+        console = 2110
+        aux = 2510
+        cnfg = configs\R10.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW3 3
+        f1/1 = SW5 1
+        x = -70.0
+        y = 177.0
+        z = 1.0
+    [[ETHSW SW5]]
+        1 = access 1 R10 f1/1
+        2 = access 1 R13 f1/0
+        3 = access 1 R14 f1/0
+        x = 50.5
+        y = 119.0
+        z = 1.0
+[127.0.0.1:7205]
+    workingdir = working
+    udp = 10501
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R12]]
+        console = 2112
+        aux = 2512
+        cnfg = configs\R12.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 3
+        f1/1 = R9 f1/1
+        x = 205.0
+        y = -82.0
+        z = 1.0
+    [[ROUTER R11]]
+        console = 2111
+        aux = 2511
+        cnfg = configs\R11.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW4 2
+        x = 172.0
+        y = -208.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working

@@ -1,0 +1,129 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ETHSW SW1]]
+        1 = access 1 R2 f1/1
+        2 = access 1 R4 f1/0
+        3 = access 1 R3 f1/0
+        x = -452.5
+        y = 134.0
+        z = 1.0
+        hx = 35.0
+        hy = 239.0
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = C:\Users\91600\GNS3\securityy\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        x = -448.0
+        y = -267.0
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = C:\Users\91600\GNS3\securityy\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        f1/1 = SW1 1
+        x = -447.0
+        y = -41.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        idlepc = 0x62bf619c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = C:\Users\91600\GNS3\securityy\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        x = -279.0
+        y = 234.0
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = C:\Users\91600\GNS3\securityy\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        x = -611.0
+        y = 232.0
+        z = 1.0
+[GNS3-DATA]
+    configs = C:\Users\91600\GNS3\securityy
+    workdir = working
+    [[NOTE 1]]
+        text = "Sh Policy-map int f1/0"
+        x = -344.0
+        y = -68.0
+    [[NOTE 2]]
+        text = "CB-WFQ - 30% = ICMP\nLLQ - 20% = telnet\nPolive - 10% = Http"
+        x = -167.0
+        y = -37.0
+    [[NOTE 3]]
+        text = "200.0.0.0/24"
+        x = -555.0
+        y = -151.0
+    [[NOTE 4]]
+        text = "10.0.0.0/8"
+        x = -562.0
+        y = 109.0
+    [[NOTE 5]]
+        text = "3"
+        x = -104.077030439
+        y = 236.738974836
+        interface = SW1 3
+    [[NOTE 6]]
+        text = "2"
+        x = 47.3599266553
+        y = 243.185637753
+        interface = SW1 2
+    [[NOTE 7]]
+        text = "1"
+        x = -145.790052677
+        y = 231.006300811
+        interface = SW1 1
+    [[NOTE 8]]
+        text = "f1/0"
+        x = -27.8599266553
+        y = -1.18563775295
+        interface = R4 f1/0
+    [[NOTE 9]]
+        text = "f1/0"
+        x = 66.577030439
+        y = 0.261025164496
+        interface = R3 f1/0
+    [[NOTE 10]]
+        text = "f1/1"
+        x = 32.2900526771
+        y = 61.9936991887
+        interface = R2 f1/1
+    [[NOTE 11]]
+        text = "f1/0"
+        x = 43.8230105822
+        y = -19.9996084324
+        interface = R2 f1/0
+    [[NOTE 12]]
+        text = "f1/0"
+        x = 33.1769894178
+        y = 61.9996084324
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -611.0
+        y = -36.0
+        width = 397.0
+        height = 308.0

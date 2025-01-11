@@ -1,0 +1,130 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_mbvnom\working
+    udp = 10001
+    [[3725]]
+        image = C:\eve\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x60264a2c
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R3-ISP-CA]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R1 f0/0
+        f0/1 = R2 f0/0
+        cnfg = configs\R3-ISP-CA.cfg
+        x = -282.0
+        y = -256.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = R3-ISP-CA f0/0
+        cnfg = configs\R1.cfg
+        x = -557.0
+        y = -137.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = R3-ISP-CA f0/1
+        cnfg = configs\R2.cfg
+        x = 13.0
+        y = -141.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "# Crypto isakmp pol 1\n           authen rsa-sign"
+        x = -238.0
+        y = -1.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "# Clock Set HH:MM:SS Day Month Year\n# IP Domain-name www.Sbi.com\n# Crypto key generate RSA\n\n-> Configure a Pointer towards the CA\n      # Crypto ca Trustpoint  DEF\n               enrollment url http://200.1.1.3:80\n               revocation-check none\n\n-> Tell the R1 to download Root-Cert\n      # Crypto ca authentication DEF\n\n-> Tell the R1 to Register ur CSR so that u can download ur ID-CERT\n     # Crypto ca enroll DEF"
+        x = -631.0
+        y = -9.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "R3-CA\n1) Configure the Proper Time\n   # ClockSet HH:MM:SS Day Month Year\n\n2) Configure a Proper Domain-name\n    # IP Domain-name Verizon.com\n\n3) Generate a Public/Private key Pair\n     # Crypto key generate Rsa label ABC\n\n4) Enable the Http Service\n    # IP http Server\n\n5) # Crypto PKI Server ABC\n             database url Flash:CA-DATABASE\n             Issuer-name CN=www.Verizon.com OU=Verizon O=CA C=India L=DElhi\n             Grant auto\n             no shutdown\n            Password:\n            Re-enter :"
+        x = -6.0
+        y = -69.0
+        font = "MS Shell Dlg 2,11,-1,5,75,0,0,0,0,0"
+    [[NOTE 4]]
+        text = "PHASE II = Session-Key"
+        x = -287.0
+        y = -67.0
+    [[NOTE 5]]
+        text = "PHASE I = RSA(ID-CERT)"
+        x = -287.0
+        y = -126.0
+    [[NOTE 6]]
+        text = "172.16.0.0/16"
+        x = 77.0
+        y = -102.0
+    [[NOTE 7]]
+        text = "10.0.0.0/8"
+        x = -629.0
+        y = -108.0
+    [[NOTE 8]]
+        text = "200.2.2.0/24"
+        x = -123.0
+        y = -207.0
+    [[NOTE 9]]
+        text = "200.1.1.0/24"
+        x = -475.0
+        y = -198.0
+    [[NOTE 10]]
+        text = "f0/1"
+        x = 70.2683200694
+        y = 36.5283281627
+        interface = R3-ISP-CA f0/1
+    [[NOTE 11]]
+        text = "f0/0"
+        x = -35.7103371537
+        y = 41.8855640774
+        interface = R3-ISP-CA f0/0
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -4.26832006944
+        y = 7.47167183734
+        interface = R2 f0/0
+    [[NOTE 13]]
+        text = "f0/0"
+        x = 69.7103371537
+        y = 6.11443592256
+        interface = R1 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -432.0
+        y = -70.0
+        width = 413.0
+        height = 40.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -430.0
+        y = -132.0
+        width = 413.0
+        height = 40.0
+    [[SHAPE 3]]
+        type = rectangle
+        x = -318.0
+        y = -288.0
+        width = 136.0
+        height = 75.0
+    [[SHAPE 4]]
+        type = rectangle
+        x = 15.0
+        y = -141.0
+        width = 167.0
+        height = 59.0
+    [[SHAPE 5]]
+        type = rectangle
+        x = -629.0
+        y = -137.0
+        width = 136.0
+        height = 59.0

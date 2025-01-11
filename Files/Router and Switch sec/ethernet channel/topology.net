@@ -1,0 +1,77 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = c:\users\91600\appdata\local\temp\GNS3_cheupr\working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\91600\Downloads\Simulators\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        idlepc = 0x602649b4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER SW1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\SW1.cfg
+        slot1 = NM-16ESW
+        f1/0 = SW2 f1/0
+        f1/1 = SW2 f1/1
+        symbol = EtherSwitch router
+        x = -490.5
+        y = -251.5
+        z = 1.0
+    [[ROUTER SW2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\SW2.cfg
+        slot1 = NM-16ESW
+        f1/0 = SW1 f1/0
+        f1/1 = SW1 f1/1
+        symbol = EtherSwitch router
+        x = -490.5
+        y = 17.5
+        z = 1.0
+        hx = 9.0
+        hy = 50.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "Po1 (B-P)"
+        x = -190.0
+        y = -144.0
+    [[NOTE 2]]
+        text = "f1/1\nP2"
+        x = -124.0
+        y = -92.0
+    [[NOTE 3]]
+        text = "f1/0\nP1"
+        x = -231.0
+        y = -86.0
+    [[NOTE 4]]
+        text = "f1/1"
+        x = 43.5
+        y = -32.5
+        interface = SW2 f1/1
+    [[NOTE 5]]
+        text = "f1/0"
+        x = -23.5
+        y = -26.5
+        interface = SW2 f1/0
+    [[NOTE 6]]
+        text = "f1/1"
+        x = 42.5
+        y = 49.5
+        interface = SW1 f1/1
+    [[NOTE 7]]
+        text = "f1/0"
+        x = -22.5
+        y = 63.5
+        interface = SW1 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -259.0
+        y = -116.0
+        width = 200.0
+        height = 100.0

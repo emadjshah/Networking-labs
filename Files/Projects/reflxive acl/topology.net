@@ -1,0 +1,199 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10201
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 4
+        symbol = server
+        x = -350.291413922
+        y = 241.154328933
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R2 f1/0
+        x = -649.771644663
+        y = -370.823376491
+        z = 1.0
+    [[ROUTER R2]]
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = R1 f1/0
+        f1/1 = SW1 1
+        x = -642.085353162
+        y = -104.124891681
+        z = 1.0
+    [[ETHSW SW1]]
+        1 = access 1 R2 f1/1
+        2 = access 1 R3 f1/0
+        3 = access 1 R4 f1/0
+        4 = access 1 R5 f1/0
+        x = -637.954977571
+        y = 102.793939239
+        z = 1.0
+        hx = -5.62741699797
+        hy = 420.477272148
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[7200]]
+        image = F:\Simulators\c7200-adventerprisek9-mz.124-24.T5.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 3
+        symbol = computer
+        x = -636.073159853
+        y = 255.124891681
+        z = 1.0
+    [[ROUTER R3]]
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        slot1 = PA-2FE-TX
+        f1/0 = SW1 2
+        symbol = computer
+        x = -873.256926037
+        y = 258.710678119
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "Simple\nTelnet 1.0.0.1\n\nExtended \nTelnet 1.0.0.1 /source-int loo1\nTelnet 1.0.0.1 source 3.0.0.3"
+        x = 165.462986798
+        y = 114.27416998
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 2]]
+        text = "Simple\nping 1.0.0.1\n\nExtended \nping 1.0.0.1  source 3.0.0.3"
+        x = -144.249783362
+        y = 132.859956417
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 3]]
+        text = "1.0.0.0/8"
+        x = -550.129075763
+        y = -387.369624409
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 4]]
+        text = "3.0.0.0/8 (L1)"
+        x = -873.983981547
+        y = 343.979797464
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 5]]
+        text = "SBI"
+        x = -326.683332908
+        y = -139.882250994
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 6]]
+        text = "WWW.Sbi.com\n10.0.0.5"
+        x = -357.79603128
+        y = 311.854905783
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 7]]
+        text = "Permit\n200.0.0.1 -> 10.0.0.3\n200.0.0.1 -> !0.0.0.4"
+        x = -544.472221514
+        y = -63.5147186258
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 8]]
+        text = "RACL (5 Mins)"
+        x = -496.388960393
+        y = -111.39696962
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 9]]
+        text = "200.0.0.0/24"
+        x = -753.775828745
+        y = -245.546247918
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 10]]
+        text = "10.0.0.0/8"
+        x = -758.018469432
+        y = 109.622366364
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 11]]
+        text = "4"
+        x = -33.8525886211
+        y = 410.608125053
+        interface = SW1 4
+    [[NOTE 12]]
+        text = "3"
+        x = 63.5145611972
+        y = 423.694616913
+        interface = SW1 3
+    [[NOTE 13]]
+        text = "2"
+        x = -42.3557878468
+        y = 394.144700782
+        interface = SW1 2
+    [[NOTE 14]]
+        text = "1"
+        x = -9.65991304701
+        y = 424.327461855
+        interface = SW1 1
+    [[NOTE 15]]
+        text = "f1/0"
+        x = -36.2403404915
+        y = -3.49838527399
+        interface = R5 f1/0
+    [[NOTE 16]]
+        text = "f1/0"
+        x = 32.7697100502
+        y = -10.4990906958
+        interface = R4 f1/0
+    [[NOTE 17]]
+        text = "f1/0"
+        x = 63.6867402885
+        y = -0.748164437905
+        interface = R3 f1/0
+    [[NOTE 18]]
+        text = "f1/1"
+        x = 34.3192926134
+        y = 61.9782374174
+        interface = R2 f1/1
+    [[NOTE 19]]
+        text = "f1/0"
+        x = 45.9898079123
+        y = -26.4686796896
+        interface = R2 f1/0
+    [[NOTE 20]]
+        text = "f1/0"
+        x = 34.1523277115
+        y = 61.9833983154
+        interface = R1 f1/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -541.643794389
+        y = -82.0243866176
+        width = 247.487373415
+        height = 100.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -893.78297142
+        y = -108.894444303
+        width = 610.940258945
+        height = 410.121933088
