@@ -123,37 +123,37 @@ version = 0.8.6
 [GNS3-DATA]
     configs = configs
     [[NOTE 1]]
-        text = "192.168.123.128/25\n172.18.128.0/18\n172.30.30.0/23\n"
-        x = -716.0
-        y = -352.5
-    [[NOTE 2]]
-        text = "192.168.134.0/29\n"
-        x = -702.0
-        y = 181.5
-    [[NOTE 3]]
-        text = "192.168.135.0/29\n"
-        x = -379.0
-        y = 253.5
-    [[NOTE 4]]
-        text = "\n172.27.32.0/20\n172.28.28.0/24\n\n"
-        x = 280.0
-        y = -357.5
-    [[NOTE 5]]
-        text = "192.168.168.0/24\n"
-        x = 378.0
-        y = -92.5
-    [[NOTE 6]]
-        text = "VPNs\n1. IPsec over DM-VPN\n  - R1 -NHS = Client R2/R3\n  - R4 NHS = Client R5/R6\n  - NHS - Loop1\n\n2. IPsec over PTP-GRE\n   - R1 <----> R4 (Loop2)\n\n3. IPsec\n   - R1 <----> PIX \n     Loop3"
-        x = -902.0
-        y = -187.5
-    [[NOTE 7]]
-        text = "197.164.156.32/29\n"
-        x = -61.0
-        y = 258.5
-    [[NOTE 8]]
         text = "198.146.198.64/29\n"
         x = 232.0
         y = 225.5
+    [[NOTE 2]]
+        text = "192.168.168.0/24\n"
+        x = 378.0
+        y = -92.5
+    [[NOTE 3]]
+        text = "\n172.27.32.0/20\n172.28.28.0/24\n\n"
+        x = 280.0
+        y = -357.5
+    [[NOTE 4]]
+        text = "197.164.156.32/29\n"
+        x = -61.0
+        y = 258.5
+    [[NOTE 5]]
+        text = "VPNs\n1. IPsec over DM-VPN\n  - R1 -NHS = Client R2/R3\n  - R4 NHS = Client R5/R6\n  - NHS - Loop1\n\n2. IPsec over PTP-GRE\n   - R1 <----> R4 (Loop2)\n\n3. IPsec\n   - R1 <----> PIX \n     Loop3"
+        x = -902.0
+        y = -187.5
+    [[NOTE 6]]
+        text = "192.168.123.128/25\n172.18.128.0/18\n172.30.30.0/23\n"
+        x = -716.0
+        y = -352.5
+    [[NOTE 7]]
+        text = "192.168.135.0/29\n"
+        x = -379.0
+        y = 253.5
+    [[NOTE 8]]
+        text = "192.168.134.0/29\n"
+        x = -702.0
+        y = 181.5
     [[NOTE 9]]
         text = "e1"
         x = -31.989086484

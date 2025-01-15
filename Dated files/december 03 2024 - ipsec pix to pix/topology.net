@@ -22,8 +22,8 @@ version = 0.8.6
         e0 = R5 f0/1
         e1 = R3 f0/0
         e2 = R4 f0/0
-        x = 261.0
-        y = -75.0
+        x = 262.414213562
+        y = -93.3847763109
         z = 1.0
 [127.0.0.1:7200]
     workingdir = D:\Users\Emad\TEMP\Emad
@@ -37,8 +37,8 @@ version = 0.8.6
         model = 3725
         console = 2104
         aux = 2504
-        f0/0 = PIX2 e2
         cnfg = configs\R4.cfg
+        f0/0 = PIX2 e2
         x = 630.0
         y = 101.0
         z = 1.0
@@ -46,8 +46,8 @@ version = 0.8.6
         model = 3725
         console = 2101
         aux = 2501
-        f0/0 = PIX1 e0
         cnfg = configs\R1.cfg
+        f0/0 = PIX1 e0
         x = -723.0
         y = -264.0
         z = 1.0
@@ -55,8 +55,8 @@ version = 0.8.6
         model = 3725
         console = 2102
         aux = 2502
-        f0/0 = PIX1 e1
         cnfg = configs\R2.cfg
+        f0/0 = PIX1 e1
         x = -724.0
         y = 80.0
         z = 1.0
@@ -64,8 +64,8 @@ version = 0.8.6
         model = 3725
         console = 2103
         aux = 2503
-        f0/0 = PIX2 e1
         cnfg = configs\R3.cfg
+        f0/0 = PIX2 e1
         x = 627.0
         y = -267.0
         z = 1.0
@@ -81,11 +81,93 @@ version = 0.8.6
         model = 3725
         console = 2105
         aux = 2505
+        cnfg = configs\R5.cfg
         f0/0 = PIX1 e2
         f0/1 = PIX2 e0
-        cnfg = configs\R5.cfg
-        x = -112.0
-        y = -79.0
+        x = -100.686291501
+        y = -97.3847763109
         z = 1.0
 [GNS3-DATA]
     configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "Phase II"
+        x = -103.237590053
+        y = 85.9091629285
+    [[NOTE 2]]
+        text = "Phase I (ISAKMP)"
+        x = -165.462986798
+        y = 3.88477631085
+    [[NOTE 3]]
+        text = "e1"
+        x = 68.4218890135
+        y = 3.41802543553
+        interface = PIX2 e1
+    [[NOTE 4]]
+        text = "e0"
+        x = -6.99770017464
+        y = 21.5710702394
+        interface = PIX2 e0
+    [[NOTE 5]]
+        text = "e2"
+        x = 69.103562366
+        y = 39.2201273074
+        interface = PIX2 e2
+    [[NOTE 6]]
+        text = "e1"
+        x = -0.810945213374
+        y = 43.3733475099
+        interface = PIX1 e1
+    [[NOTE 7]]
+        text = "e0"
+        x = -1.32140661523
+        y = 1.45636234859
+        interface = PIX1 e0
+    [[NOTE 8]]
+        text = "e2"
+        x = 72.9413399161
+        y = 24.1654943328
+        interface = PIX1 e2
+    [[NOTE 9]]
+        text = "f0/0"
+        x = -2.42188901351
+        y = 40.5819745645
+        interface = R3 f0/0
+    [[NOTE 10]]
+        text = "f0/0"
+        x = 66.8109452134
+        y = 0.626652490117
+        interface = R2 f0/0
+    [[NOTE 11]]
+        text = "f0/0"
+        x = 67.3214066152
+        y = 42.5436376514
+        interface = R1 f0/0
+    [[NOTE 12]]
+        text = "f0/1"
+        x = 72.9977001746
+        y = 22.4289297606
+        interface = R5 f0/1
+    [[NOTE 13]]
+        text = "f0/0"
+        x = -6.94133991611
+        y = 19.8345056672
+        interface = R5 f0/0
+    [[NOTE 14]]
+        text = "f0/0"
+        x = -3.10356236603
+        y = 4.77987269263
+        interface = R4 f0/0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -362.239682094
+        y = 59.1959594929
+        width = 625.082394569
+        height = 76.3675323681
+    [[SHAPE 2]]
+        type = rectangle
+        x = -362.038671968
+        y = -24.0416305603
+        width = 625.082394569
+        height = 76.3675323681

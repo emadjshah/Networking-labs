@@ -1,0 +1,168 @@
+autostart = False
+version = 0.8.6
+[qemu 127.0.0.1:10525]
+    workingdir = qemu-flash-drives
+    udp = 40000
+    qemupath = qemu.exe
+    qemuimgpath = qemu-img.exe
+    [[525]]
+        image = D:\Emad\Documents\Networking\Firewall\pix803.bin
+        ram = 128
+        netcard = e1000
+        serial = 0x301D10D9
+        key = 0x5236f5a7,0x97def6da,0x732a91f5,0xf5deef57
+    [[PIX PIX1]]
+        e0 = R1 f0/0
+        e1 = R4 f0/0
+        x = -413.423448278
+        y = -57.3553390593
+        z = 1.0
+    [[PIX PIX2]]
+        e0 = R4 f0/1
+        e1 = R2 f0/0
+        x = 507.229580827
+        y = -44.627416998
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = d:\users\emad\temp\emad\GNS3_capg9t\working
+    udp = 10001
+    [[3725]]
+        image = D:\Emad\Documents\Networking\Simulators\c3725-adventerprisek9-mz[1].124-15.T5.image
+        ram = 128
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 3725
+        console = 2104
+        aux = 2504
+        f0/0 = PIX1 e1
+        f0/1 = PIX2 e0
+        slot1 = NM-1FE-TX
+        f1/0 = R3 f0/0
+        cnfg = configs\R4.cfg
+        x = 18.5878784787
+        y = -53.5147186258
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        f0/0 = PIX1 e0
+        cnfg = configs\R1.cfg
+        x = -764.879292401
+        y = -69.0639251369
+        z = 1.0
+        hx = 20.3284271247
+        hy = -25.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        f0/0 = PIX2 e1
+        cnfg = configs\R2.cfg
+        x = 939.240907584
+        y = -46.429365464
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        f0/0 = R4 f1/0
+        cnfg = configs\R3.cfg
+        x = 886.907863101
+        y = 389.141269072
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "172.21.0.0/23"
+        x = 1018.23376491
+        y = -48.441125497
+    [[NOTE 2]]
+        text = "192.168.164.128/25"
+        x = 961.665222414
+        y = 401.278787338
+    [[NOTE 3]]
+        text = "192.168.155.32/29\n"
+        x = 647.709811567
+        y = -59.7548339959
+    [[NOTE 4]]
+        text = "192.29.32.32/28\n"
+        x = 468.104689145
+        y = 152.37720036
+    [[NOTE 5]]
+        text = "194.29.32.16/28\n"
+        x = 220.61731573
+        y = -63.9974746831
+    [[NOTE 6]]
+        text = "194.29.32.64/28\n"
+        x = -296.984848098
+        y = -79.5538238692
+    [[NOTE 7]]
+        text = "192.168.154.16/29\n"
+        x = -675.994082814
+        y = -78.1396103068
+    [[NOTE 8]]
+        text = "192.168.172.16/28\n"
+        x = -948.937300352
+        y = -71.0685424949
+    [[NOTE 9]]
+        text = "R1 <-----> R3"
+        x = -823.072293301
+        y = -382.396536344
+    [[NOTE 10]]
+        text = "R1 <-----> R2"
+        x = -827.314933988
+        y = -423.207719526
+    [[NOTE 11]]
+        text = "e1"
+        x = 72.9620410693
+        y = 20.2577963457
+        interface = PIX2 e1
+    [[NOTE 12]]
+        text = "e0"
+        x = -26.7923756165
+        y = 29.7578909765
+        interface = PIX2 e0
+    [[NOTE 13]]
+        text = "e1"
+        x = 72.998419419
+        y = 22.3555896279
+        interface = PIX1 e1
+    [[NOTE 14]]
+        text = "e0"
+        x = -35.2620925497
+        y = 24.9107983811
+        interface = PIX1 e0
+    [[NOTE 15]]
+        text = "f1/0"
+        x = 59.1254985895
+        y = 61.8512693023
+        interface = R4 f1/0
+    [[NOTE 16]]
+        text = "f0/1"
+        x = 87.135521367
+        y = 22.7273903977
+        interface = R4 f0/1
+    [[NOTE 17]]
+        text = "f0/0"
+        x = -46.5963991654
+        y = 28.715478184
+        interface = R4 f0/0
+    [[NOTE 18]]
+        text = "f0/0"
+        x = -58.1793224587
+        y = 1.94772057093
+        interface = R3 f0/0
+    [[NOTE 19]]
+        text = "f0/0"
+        x = -46.5600208158
+        y = 25.1564172167
+        interface = R2 f0/0
+    [[NOTE 20]]
+        text = "f0/0"
+        x = 72.9778213022
+        y = 23.3318423061
+        interface = R1 f0/0
